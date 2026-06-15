@@ -1,0 +1,27 @@
+{
+  "qa_count": 25,
+  "top_k": 5,
+  "retrieval": {
+    "hit_at_1": 0.88,
+    "hit_at_3": 1.0,
+    "hit_at_5": 1.0,
+    "mrr": 0.94
+  },
+  "llm_model": "LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct",
+  "quantization": "int8",
+  "generation": {
+    "evaluated_count": 25,
+    "citation_accuracy": 0.88,
+    "keyword_recall": 0.8960000000000001,
+    "answer_pass_rate": 0.88,
+    "generation_elapsed_seconds_avg": 7.431160000000002,
+    "generated_tokens_avg": 145.0,
+    "tokens_per_second_avg": 19.18972
+  },
+  "elapsed_seconds": 186.368,
+  "cuda": {
+    "device": "NVIDIA RTX A6000",
+    "max_memory_allocated_gb": 11.746,
+    "max_memory_reserved_gb": 12.248
+  }
+}

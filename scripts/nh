@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PYTHON="${GENAI_PYTHON:-/home/wq1880/miniconda3/envs/myenv/bin/python}"
+PROJECT_DIR="/home/wq1880/Gen AI"
+PROCESS_NAME="${GENAI_PROCESS_NAME:-neahyuk}"
+
+if [[ ! -x "${PYTHON}" ]]; then
+  echo "Python not found: ${PYTHON}" >&2
+  exit 1
+fi
+
+export PYTHONPATH="${PROJECT_DIR}:${PYTHONPATH:-}"
+export GENAI_PROCESS_NAME="${PROCESS_NAME}"
+
+exec -a "${PROCESS_NAME}" "${PYTHON}" "$@"

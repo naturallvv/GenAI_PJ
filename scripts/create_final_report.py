@@ -1,0 +1,548 @@
+#!/usr/bin/env python3
+import html
+import json
+import re
+import uuid
+import zipfile
+from datetime import datetime, timezone
+from pathlib import Path
+from xml.sax.saxutils import escape
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+REPORT_DIR = PROJECT_ROOT / "reports"
+REPORT_STEM = "제주대학교_규정_RAG_최종보고서"
+
+
+def read_json(path: str):
+    return json.loads((PROJECT_ROOT / path).read_text(encoding="utf-8"))
+
+
+def metric(report: dict, *keys, default="-"):
+    value = report
+    for key in keys:
+        if not isinstance(value, dict) or key not in value:
+            return default
+        value = value[key]
+    if isinstance(value, float):
+        return f"{value:.4f}"
+    return value
+
+
+def load_project_numbers():
+    manifest = read_json("data/metadata/rules_manifest.json")
+    extract_report = read_json("data/metadata/extract_report.json")
+    chunk_report = read_json("data/metadata/contextual_chunk_report.json")
+    index_report = read_json("data/metadata/index_contextual_report.json")
+    retrieval_comparison = read_json("data/metadata/retrieval_comparison_contextual.json")
+    quantization_comparison = read_json("data/metadata/quantization_comparison.json")
+    return {
+        "manifest_count": len(manifest),
+        "downloaded_count": sum(1 for row in manifest if row.get("status") == "downloaded"),
+        "extracted_count": sum(1 for row in extract_report if row.get("status") == "extracted"),
+        "contextual_articles": chunk_report.get("total_articles"),
+        "contextual_addenda": chunk_report.get("total_addenda"),
+        "contextual_index_size": index_report.get("index_size"),
+        "contextual_build_seconds": index_report.get("elapsed_seconds"),
+        "retrieval_comparison": retrieval_comparison,
+        "quantization_comparison": quantization_comparison,
+    }
+
+
+def table_from_rows(headers, rows):
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join(["---"] * len(headers)) + " |",
+    ]
+    for row in rows:
+        lines.append("| " + " | ".join(str(value) for value in row) + " |")
+    return "\n".join(lines)
+
+
+def report_markdown(numbers: dict):
+    retrieval_rows = []
+    for row in numbers["retrieval_comparison"]:
+        if row.get("status") != "ok":
+            continue
+        retrieval_rows.append(
+            [
+                row["name"],
+                f"{row.get('hit_at_1', 0):.4f}",
+                f"{row.get('hit_at_3', 0):.4f}",
+                f"{row.get('hit_at_5', 0):.4f}",
+                f"{row.get('mrr', 0):.4f}",
+                row.get("dense_weight") if row.get("dense_weight") is not None else "-",
+            ]
+        )
+
+    quant_rows = []
+    for row in numbers["quantization_comparison"]:
+        if row.get("status") != "ok":
+            continue
+        quant_rows.append(
+            [
+                row["quantization"].upper(),
+                f"{row.get('citation_accuracy', 0):.4f}",
+                f"{row.get('keyword_recall', 0):.4f}",
+                f"{row.get('answer_pass_rate', 0):.4f}",
+                f"{row.get('avg_generation_seconds', 0):.4f}",
+                f"{row.get('tokens_per_second', 0):.4f}",
+                f"{row.get('max_memory_allocated_gb', 0):.3f}",
+            ]
+        )
+
+    retrieval_table = table_from_rows(
+        ["검색 방식", "Hit@1", "Hit@3", "Hit@5", "MRR", "Dense 가중치"],
+        retrieval_rows,
+    )
+    quant_table = table_from_rows(
+        ["양자화", "근거 인용 정확도", "키워드 재현율", "답변 통과율", "평균 생성 시간", "tokens/sec", "VRAM GB"],
+        quant_rows,
+    )
+
+    return f"""# 양자화된 LLM 기반 제주대학교 규정 RAG 시스템 구축
+
+**학번:** 2021108112  
+**성명:** 정내혁  
+**프로젝트명:** Context-Augmented Chunking 기반 제주대학교 규정 RAG 검색 성능 개선  
+**작성일:** 2026년 6월 14일
+
+<!-- PAGEBREAK -->
+
+## 초록
+
+본 프로젝트는 제주대학교 규정집 전체를 대상으로 사용자의 규정 관련 질문에 정확한 근거 조항과 함께 답변하는 한국어 RAG 시스템을 구축하는 것을 목표로 한다. 대학 규정은 규정 수가 많고 조항 구조가 유사하며, “위원회”, “임기”, “수당”, “징계”, “휴직”, “목적”, “정의”와 같이 반복되는 표현이 많다. 일반 LLM에 바로 질의하면 존재하지 않는 조항을 만들어내거나 근거를 명확히 제시하지 못하는 문제가 발생할 수 있다. 따라서 본 프로젝트에서는 규정 원문을 수집하고 조항 단위로 구조화한 뒤, 검색된 근거 조항에 기반해 EXAONE-3.5가 답변을 생성하도록 구성하였다.
+
+기본 시스템은 제주대학교 규정집 다운로드 페이지에서 총 {numbers['manifest_count']}개 규정 파일을 수집하고, HWP/PDF 원문을 텍스트로 추출한 뒤, 제N조 단위로 {numbers['contextual_articles']}개 조항 청크를 구축하였다. 이후 BGE-M3 기반 dense retrieval, FAISS 인덱스, EXAONE-3.5-7.8B-Instruct, FP16/INT8/INT4 양자화 실험, Streamlit 대시보드를 구현하였다. 추가 개선으로는 Context-Augmented Chunking을 적용하였다. 이 방식은 검색용 텍스트에는 규정명, 상위분류, 장/절, 목적 요약 등 문서 맥락을 포함하고, 답변과 화면 표시에는 원문 조항만 사용하도록 분리한 것이다.
+
+100개 QA 평가 결과, 기존 baseline dense 검색은 Hit@1 0.88, Hit@3 0.97, Hit@5 1.00, MRR 0.9292를 보였다. 최종 개선안인 Contextual Hybrid 검색은 Hit@1 0.88, Hit@3 0.98, Hit@5 1.00, MRR 0.9300을 기록하여 baseline 대비 Hit@3와 MRR에서 소폭 개선되었다. LLM 생성 실험에서는 FP16, INT8, INT4를 비교하였고, INT4가 가장 빠르고 VRAM 사용량이 낮았으나 근거 인용 정확도와 답변 통과율은 FP16/INT8 대비 낮아지는 경향을 보였다.
+
+<!-- PAGEBREAK -->
+
+## 1. 서론
+
+대학 규정은 학칙, 학사관리, 장학, 교원, 직원, 연구, 위원회, 시설 운영 등 대학 구성원이 준수해야 하는 제도적 근거를 담고 있다. 그러나 규정 문서는 일반 사용자가 직접 탐색하기 어렵다. 규정집은 여러 개의 파일로 나뉘어 있고, 각 파일은 다시 수십 개 조항으로 구성된다. 사용자가 “외국인 유학생은 기숙사를 제공받을 수 있는가”, “장학금은 어떤 학생에게 지급할 수 있는가”, “복수전공은 어떻게 정의되는가”와 같은 질문을 할 때, 관련 규정을 직접 찾고 조항 번호까지 확인하는 과정은 번거롭다.
+
+최근 LLM은 자연어 질의응답에 강점을 보이지만, 규정 질의응답에서 LLM만 사용하는 방식은 위험하다. LLM은 확률적으로 문장을 생성하므로, 실제 규정에 없는 내용을 그럴듯하게 답하거나 조항 번호를 잘못 인용할 수 있다. 특히 법령·규정·학칙과 같이 근거가 중요한 문서에서는 답변의 자연스러움보다 근거 충실도가 중요하다. 따라서 본 프로젝트는 LLM이 임의로 답하지 않도록 검색 단계에서 관련 조항을 먼저 찾고, LLM은 검색된 조항만 근거로 답변하도록 제한하는 RAG 구조를 채택하였다.
+
+본 프로젝트의 핵심 목표는 두 가지이다. 첫째, 제주대학교 규정집 전체를 조항 단위 말뭉치로 구축하고, 질의에 맞는 근거 조항을 안정적으로 검색하는 것이다. 둘째, 한국어 특화 LLM인 EXAONE-3.5-7.8B-Instruct에 양자화를 적용하여 추론 속도와 자원 효율성을 비교하는 것이다. 추가로 검색 정확도를 높이기 위해 Context-Augmented Chunking을 적용하였다. 이는 단순 조항 본문만 임베딩하는 것이 아니라, 각 조항에 문서 수준 맥락을 함께 부착하여 검색기가 해당 조항이 어떤 규정 체계에 속하는지 더 잘 파악하도록 하는 방법이다.
+
+<!-- PAGEBREAK -->
+
+## 2. 프로젝트 목표와 범위
+
+본 프로젝트의 범위는 데이터 수집, 말뭉치 구축, 검색 인덱스 구축, LLM 답변 생성, 양자화 비교, 데모 대시보드 구현, 검색 성능 개선 실험까지이다. 최종 제출물은 `Data` 폴더, `requirements.txt`, `main.py`, `README.md`, `viz.py` 및 보조 스크립트를 포함하는 형태로 구성할 수 있도록 하였다.
+
+구체적인 구현 목표는 다음과 같다. 첫째, 제주대학교 규정집 전체 페이지에서 규정 파일을 다운로드하고 원본 파일을 보존한다. 둘째, HWP/PDF에서 텍스트를 추출하고 제N조 단위로 청킹한다. 셋째, 각 조항에 규정명, 조 번호, 조 제목, 출처 파일, 다운로드 URL 등의 메타데이터를 부착한다. 넷째, BGE-M3 임베딩과 FAISS를 이용해 dense 검색 인덱스를 구축한다. 다섯째, EXAONE-3.5-7.8B-Instruct를 FP16/INT8/INT4로 실행하여 생성 품질과 효율성을 비교한다. 여섯째, 사용자가 질문을 입력하면 답변, 근거 조항, 검색 후보 유사도를 확인할 수 있는 Streamlit 대시보드를 제공한다.
+
+검색 성능 개선의 범위는 Context-Augmented Chunking과 Hybrid 검색까지로 설정하였다. Reranker는 인터페이스와 옵션을 마련했지만, 서버 캐시에 해당 모델이 존재하지 않아 최종 정량 결과에는 포함하지 않았다. 또한 본 프로젝트는 LLM fine-tuning을 수행하지 않는다. 규정 질의응답의 목적상 모델을 학습시키기보다, 검색된 근거를 정확히 제공하고 LLM이 그 근거 안에서 답하도록 제한하는 편이 안정적이기 때문이다.
+
+## 3. 데이터 수집 및 말뭉치 구축
+
+데이터 출처는 제주대학교 규정집 전체 페이지이다. 수집 스크립트는 HTML에서 다운로드 링크를 파싱하고, `/cs/download.htm?act=download&seq=...&no=...` 형태의 링크를 절대 URL로 정규화하였다. 파일명은 `Content-Disposition` 헤더를 우선 사용하고, 한글 파일명을 URL decode한 뒤 파일 시스템에서 안전한 이름으로 정리하였다. 원본 파일은 `data/raw_hwp/`에 저장하였다.
+
+수집 결과 총 {numbers['manifest_count']}개 규정 파일이 manifest에 기록되었고, 다운로드 상태가 정상인 파일은 {numbers['downloaded_count']}개였다. 추출 단계에서는 HWP5 OLE 구조를 직접 읽어 `FileHeader`와 `BodyText/Section*` 스트림을 순회하였다. 압축된 스트림은 zlib raw deflate 방식으로 해제하고, 텍스트 레코드에서 UTF-16LE 본문을 추출하였다. PDF 파일은 별도의 PDF 텍스트 추출 경로를 사용하였다. 추출된 텍스트는 `data/text/`에 저장하고, 추출 상태와 글자 수는 `extract_report.json`에 기록하였다.
+
+조항 청킹은 `제1조`, `제2조`, `제2조의2` 등 조 번호 패턴을 기준으로 수행하였다. 기존 baseline은 조항 원문 중심의 `articles.jsonl`을 생성하였다. 이후 개선 실험을 위해 `articles_contextual.jsonl`을 별도로 생성하였다. 이 파일은 기존 baseline을 덮어쓰지 않으며, 각 조항에 `embedding_text`와 `display_text`를 분리해 저장한다. 최종 contextual 말뭉치에는 {numbers['contextual_articles']}개 조항이 포함되었고, 부칙 후보는 {numbers['contextual_addenda']}개로 파악되었다.
+
+<!-- PAGEBREAK -->
+
+## 4. Baseline RAG 시스템 설계
+
+Baseline RAG 시스템은 조항 단위 청킹, BGE-M3 임베딩, FAISS dense 검색, EXAONE 답변 생성으로 구성된다. 각 조항은 규정명, 조 번호, 조 제목, 본문, 출처 파일, 다운로드 URL을 포함한다. 검색용 텍스트는 규정명, 조문 정보, 본문을 결합하여 구성하였다. 이후 BGE-M3를 이용해 각 조항을 1024차원 벡터로 임베딩하고, cosine similarity와 동일하게 사용할 수 있도록 정규화한 뒤 FAISS `IndexFlatIP`에 저장하였다.
+
+사용자 질의가 입력되면 동일한 임베딩 모델로 질의를 벡터화하고, FAISS에서 top-k 조항을 검색한다. LLM을 사용하지 않는 경우에는 상위 근거 조항을 기반으로 간단한 추출형 답변을 제공한다. LLM을 사용하는 경우에는 “주어진 근거 조항만 사용하고, 근거가 부족하면 찾을 수 없음이라고 답하라”는 시스템 지침과 함께 검색 결과를 프롬프트에 삽입한다. 이때 LLM에게 전달되는 근거는 조항 원문과 규정명·조 번호 중심으로 구성된다.
+
+Baseline 구조의 장점은 단순하고 근거 인용이 명확하다는 점이다. 그러나 대학 규정은 유사한 조항 제목과 문구가 반복되므로, 조항 본문만으로는 문서 수준 맥락이 부족할 수 있다. 예를 들어 “목적”, “정의”, “위원회 구성”, “기능”, “수당” 같은 조항 제목은 여러 규정에서 반복된다. 이런 경우 검색기가 본문 표현만 보고 잘못된 규정의 조항을 상위에 올릴 가능성이 있다.
+
+## 5. Context-Augmented Chunking 개선
+
+Context-Augmented Chunking은 각 조항 청크에 문서 수준 맥락을 부착하는 방식이다. 본 프로젝트에서는 검색용 텍스트와 답변용 텍스트를 분리하였다. `embedding_text`는 조항 원문에 규정명, 상위분류, 장/절/관, 조문 메타데이터, 규정 목적 요약을 덧붙인 검색 전용 텍스트이다. `display_text`는 사용자에게 보여주고 LLM에게 최종 근거로 제공하는 원문 조항이다. 이 분리를 통해 검색기는 더 많은 맥락을 활용하되, 답변의 근거는 원문 조항으로 유지할 수 있다.
+
+초기 실험에서는 문서 맥락을 조항 앞에 배치하였다. 그러나 “이 규정은 무엇을 목적으로 하는가”와 같은 질문에서 목적 요약이 모든 조항에 반복되어, 제1조(목적)가 아닌 같은 규정의 다른 조항이 상위에 검색되는 문제가 발생하였다. 따라서 최종 구현에서는 원문 조항을 먼저 배치하고, 문서 맥락을 뒤에 추가하였다. 이 방식은 조항 본문 의미를 우선 보존하면서도 문서 수준 정보를 보조적으로 제공한다.
+
+규정 구조 파싱에서는 `제N장`, `제N절`, `제N관` 패턴을 인식하여 뒤따르는 조항의 메타데이터로 부착하였다. 또한 `제1조(목적)` 또는 제목에 “목적”이 포함된 조항을 우선적으로 규정 목적 요약으로 사용하였다. 목적 조항이 없는 경우에는 규정명과 초반 조항 제목을 이용해 deterministic fallback 요약을 생성하였다. 부칙은 별도로 탐지하되, 일반 조항 평가에는 포함하지 않았다.
+
+<!-- PAGEBREAK -->
+
+## 6. Hybrid 검색 및 파이프라인 개선
+
+Contextual Dense 검색은 `embedding_text`를 BGE-M3로 임베딩한 FAISS 인덱스를 사용한다. 여기에 BM25를 결합한 Contextual Hybrid 검색도 구현하였다. BM25는 외부 형태소 분석기 없이 한글·영문·숫자 토큰을 정규식으로 추출하는 pure-Python 방식으로 구현하였다. Dense score와 BM25 score는 각각 min-max 정규화한 뒤 가중합으로 결합한다.
+
+실험 결과 BM25 가중치가 과도하면 반복 단어가 많은 조항이 상위로 올라오는 문제가 있었다. 예를 들어 “복수전공 정의” 질문에서 BM25는 “복수전공”이라는 단어가 많이 반복되는 신청·선발 조항을 강하게 선호하였다. 따라서 최종 기본값은 dense 0.9, BM25 0.1로 설정하였다. 이 값은 semantic retrieval을 주로 사용하면서도, 규정명·조항명과 같은 exact match 신호를 보조적으로 반영한다.
+
+개선 후 검색 파이프라인은 다음과 같다. 사용자가 질문을 입력하면 질의를 임베딩하고 FAISS에서 후보를 검색한다. Hybrid 모드에서는 BM25 후보도 계산하여 dense score와 결합한다. 이후 최종 top-k 조항을 선택하고, LLM 프롬프트에는 `display_text`만 제공한다. 대시보드에서는 Baseline Dense, Contextual Dense, Contextual Hybrid, Contextual Hybrid + Reranker 모드를 선택할 수 있도록 하였다.
+
+## 7. LLM 선택 및 양자화
+
+LLM은 한국어 문서 질의응답에 적합한 EXAONE-3.5-7.8B-Instruct를 사용하였다. 해당 모델은 instruction-following 능력을 갖춘 한국어 특화 LLM이며, 규정 질의응답에서 자연어 답변을 생성하는 역할을 한다. 모델은 Hugging Face 캐시를 `/ceph_data/wq1880/Gen_AI/hf_cache`에 저장하여 홈 디렉터리 용량 부담을 줄였다.
+
+양자화 실험은 FP16, INT8, INT4 세 조건으로 수행하였다. FP16은 기준 성능과 안정성을 확인하기 위한 baseline이다. INT8과 INT4는 bitsandbytes 기반 양자화를 적용하여 VRAM 사용량과 생성 속도 변화를 확인하였다. 일반적으로 양자화는 메모리 사용량을 줄일 수 있지만, 항상 속도 향상을 보장하지는 않는다. 본 실험에서도 INT8은 VRAM은 감소했지만 평균 생성 시간은 증가하였다. 이는 8bit 연산 과정에서 dequantization 및 커널 오버헤드가 발생하고, 해당 모델·GPU·라이브러리 조합에서 FP16 Tensor Core 경로보다 효율적이지 않았기 때문으로 해석된다.
+
+LLM은 검색 결과를 그대로 믿고 답변하기 때문에, 생성 품질은 검색 품질에 크게 의존한다. 따라서 양자화 실험은 단순 생성 속도뿐 아니라 근거 인용 정확도와 키워드 재현율을 함께 평가하였다. 최종 시스템에서는 사용 가능한 VRAM과 품질 요구에 따라 FP16 또는 INT4를 선택할 수 있도록 하였다.
+
+<!-- PAGEBREAK -->
+
+## 8. 평가 설계
+
+검색 평가는 규정에서 정답 조항을 확인할 수 있는 QA 100개를 기준으로 수행하였다. 각 QA에는 질문, 기대 규정명, 기대 조 번호, 기대 키워드, 참조 답변을 포함하였다. 검색 평가지표는 Hit@1, Hit@3, Hit@5, MRR을 사용하였다. Hit@k는 정답 조항이 상위 k개 후보 안에 포함되는지를 의미하며, MRR은 정답 조항이 몇 번째에 등장하는지를 반영한다.
+
+생성 평가는 25개 QA에 대해 수행하였다. 생성 결과가 기대 규정명과 조 번호를 포함하는지 확인하여 근거 인용 정확도를 계산하였다. 또한 기대 키워드가 답변에 얼마나 포함되는지 키워드 재현율을 계산하고, 근거 인용과 키워드 재현율 기준을 동시에 만족하는 경우 답변 통과로 보았다. 이 평가는 완전한 인간 평가를 대체하지는 않지만, 제출 전 모델 비교와 회귀 확인에는 유용하다.
+
+효율성 평가는 평균 생성 시간, 초당 생성 토큰 수, GPU 최대 메모리 사용량을 기준으로 비교하였다. 공용 GPU 서버 환경을 고려하여 모든 GPU 실행 스크립트는 실행 전 `nvidia-smi` 상태를 출력하고, 추론·평가 작업은 빈 GPU를 자동 선택하도록 구성하였다. 장시간 학습 작업은 별도 정책으로 사용자에게 GPU 번호와 개수를 먼저 확인한 뒤 실행하도록 정리하였다.
+
+## 9. 실험 결과
+
+### 9.1 검색 성능
+
+{retrieval_table}
+
+검색 성능 비교 결과, Baseline Dense는 Hit@1 0.88, Hit@3 0.97, Hit@5 1.00, MRR 0.9292를 기록하였다. Contextual Dense는 Hit@1과 Hit@5는 동일했으나 Hit@3와 MRR이 약간 낮았다. 그러나 Contextual Hybrid는 dense weight 0.9 설정에서 Hit@1 0.88, Hit@3 0.98, Hit@5 1.00, MRR 0.9300을 기록하여 baseline 대비 Hit@3와 MRR이 소폭 개선되었다.
+
+이 결과는 문서 맥락 추가가 항상 큰 폭의 성능 향상으로 이어지는 것은 아니며, 문맥의 위치와 가중치 조정이 중요함을 보여준다. 특히 목적 요약처럼 문서 전체에 반복되는 정보는 모든 조항을 비슷하게 만드는 부작용이 있다. 따라서 최종 구현에서는 원문 조항을 앞에 두고 문서 맥락을 뒤에 붙였으며, BM25는 dense retrieval을 보조하는 낮은 가중치로 사용하였다.
+
+### 9.2 양자화 및 생성 성능
+
+{quant_table}
+
+FP16은 근거 인용 정확도 0.88, 키워드 재현율 0.898, 답변 통과율 0.84를 기록하였다. INT8은 VRAM 사용량을 11.746GB 수준으로 줄였고 답변 통과율은 0.88로 높았지만, 평균 생성 시간이 7.4312초로 가장 길었다. INT4는 VRAM 사용량 8.996GB, 평균 생성 시간 2.5760초, tokens/sec 50.9247로 가장 효율적이었으나 근거 인용 정확도와 답변 통과율은 낮아졌다.
+
+이 결과는 양자화 수준이 높아질수록 자원 효율성은 좋아질 수 있지만, 근거 인용과 답변 안정성은 저하될 수 있음을 보여준다. 제출용 시스템에서는 안정적인 답변 품질이 중요할 경우 FP16 또는 INT8을 사용하고, 제한된 GPU 환경이나 빠른 데모가 필요할 경우 INT4를 선택하는 전략이 적절하다.
+
+<!-- PAGEBREAK -->
+
+## 10. 데모 대시보드
+
+데모 대시보드는 Streamlit으로 구현하였다. 사용자는 질문을 입력하고 검색 및 답변 버튼을 누르면 답변, 검색 후보, 근거 조항, 유사도 점수를 확인할 수 있다. 검색 방식은 Baseline Dense, Contextual Dense, Contextual Hybrid, Contextual Hybrid + Reranker 중에서 선택할 수 있다. 기본 실행은 GPU를 숨겨 검색 전용으로 동작하며, EXAONE 답변 생성을 사용하려면 `USE_GPU=1`로 대시보드를 실행한다.
+
+대시보드는 공용 서버 환경을 고려하여 안전하게 설계하였다. 기본 실행에서는 CUDA를 숨겨 실수로 GPU 모델을 올리지 않게 하였다. GPU 생성 실행 시에는 빈 GPU를 자동 선택하고, 프로세스명이 `neahyuk`으로 표시되도록 하였다. 또한 EXAONE 생성 토글은 CUDA가 보이는 경우에만 활성화되도록 하여 “No CUDA GPUs are available” 오류를 방지하였다.
+
+시각화 측면에서는 검색 후보 표와 근거 조항 카드, 유사도 막대를 제공하였다. 메트릭 영역은 Streamlit 기본 `st.metric()`을 사용하여 HTML 렌더링 깨짐을 방지하였다. 사용자는 답변뿐 아니라 어떤 조항들이 후보로 검색되었는지 함께 확인할 수 있으므로, RAG 시스템의 근거 투명성을 점검할 수 있다.
+
+## 11. 구현상 주요 이슈와 해결
+
+첫 번째 이슈는 HWP 텍스트 추출이다. 대학 규정 원문은 대부분 HWP5 형식이므로 일반적인 텍스트 파서로는 읽기 어렵다. 본 프로젝트에서는 OLE 스트림을 직접 읽고 압축 여부를 확인한 뒤, BodyText 섹션에서 UTF-16LE 텍스트 레코드를 추출하였다. 일부 PDF 문서에 대해서는 별도 PDF 추출 경로를 적용하였다.
+
+두 번째 이슈는 EXAONE과 최신 Transformers 버전 간 호환성이다. EXAONE remote code가 요구하는 일부 함수와 현재 설치된 Transformers API 사이에 차이가 있어 `RopeParameters`, kernel integration, attention interface 관련 패치를 적용하였다. 또한 BGE-M3 임베딩 모델은 현재 환경에서 `.bin` 파일을 로드하므로, torch 2.6 미만 보안 제한과 충돌하였다. 이 문제는 신뢰한 BGE-M3 모델에 한정하여 안전 체크를 완화하는 방식으로 해결하였다.
+
+세 번째 이슈는 Context-Augmented Chunking의 부작용이다. 문서 목적 요약을 모든 조항 앞에 붙이면, 목적 질의에서 실제 목적 조항이 아닌 같은 문서의 다른 조항도 높은 점수를 받는다. 이를 해결하기 위해 원문 조항을 먼저 배치하고, 문서 맥락을 뒤에 배치하였다. 또한 BM25 가중치를 0.1로 낮춰 exact match 신호가 dense retrieval을 압도하지 않도록 하였다.
+
+<!-- PAGEBREAK -->
+
+## 12. 한계 및 향후 개선 방향
+
+본 프로젝트는 제출 가능한 수준의 RAG 시스템과 데모를 구현했지만 몇 가지 한계가 있다. 첫째, 평가 데이터셋이 현재 100개 QA이므로 규정 전체를 완전히 대표한다고 보기 어렵다. 향후에는 학사, 교원, 직원, 연구, 위원회, 시설, 장학, 학생생활 등 범주별로 균형을 맞춰 200개 이상으로 확장할 필요가 있다.
+
+둘째, 생성 평가는 자동 키워드 기반으로 수행되었다. 이 방식은 빠르고 재현 가능하지만, 의미적으로 맞는 답변이 키워드 표현 차이 때문에 낮게 평가될 수 있고, 반대로 키워드만 포함한 부정확한 답변이 높게 평가될 수 있다. 향후에는 사람 평가 또는 LLM-as-a-judge를 보조적으로 활용하여 근거 충실도와 답변 정확도를 더 정교하게 평가할 수 있다.
+
+셋째, Reranker 정량 실험은 수행하지 못했다. 대시보드와 평가 스크립트에는 reranker 옵션을 마련했지만, 서버 캐시에 reranker 모델이 없어 최종 비교표에는 포함하지 않았다. 향후 `BAAI/bge-reranker-v2-m3` 또는 한국어 reranker를 캐시에 확보하면 top-20 후보 재정렬 실험을 추가할 수 있다.
+
+넷째, LLM fine-tuning은 수행하지 않았다. 본 프로젝트의 목적은 검색 근거 기반 답변이므로 fine-tuning보다 검색 품질과 프롬프트 제약이 더 중요하다고 판단하였다. 다만 향후 규정 답변 스타일을 더 통일하거나 “찾을 수 없음” 판단을 개선하기 위해 소규모 instruction tuning을 고려할 수 있다.
+
+## 13. 결론
+
+본 프로젝트는 제주대학교 규정집 전체를 기반으로 한 한국어 RAG 시스템을 구축하였다. 원본 규정 파일 수집, HWP/PDF 텍스트 추출, 조항 단위 청킹, FAISS 검색 인덱스, EXAONE 기반 답변 생성, FP16/INT8/INT4 양자화 비교, Streamlit 대시보드까지 end-to-end로 구현하였다. 또한 단순 조항 청킹의 한계를 보완하기 위해 Context-Augmented Chunking을 적용하고, 문서 맥락을 검색용 텍스트에만 포함하는 구조를 설계하였다.
+
+실험 결과, 최종 Contextual Hybrid 검색은 100개 QA 기준 Hit@1 0.88, Hit@3 0.98, Hit@5 1.00, MRR 0.9300을 기록하였다. 이는 baseline dense 검색과 비교해 Hit@3와 MRR에서 소폭 개선된 결과이다. 양자화 실험에서는 INT4가 가장 빠르고 VRAM 사용량이 낮았지만 품질 저하가 있었고, FP16은 안정적인 품질을 제공하였다. 따라서 본 시스템은 사용 환경에 따라 검색 방식과 양자화 수준을 선택할 수 있는 구조를 갖추었다.
+
+결론적으로, 본 프로젝트는 대학 규정처럼 구조가 유사하고 근거 충실도가 중요한 한국어 문서 검색·질의응답 과제에서 RAG와 Context-Augmented Chunking이 실용적인 접근임을 보였다. 특히 검색용 문맥과 답변용 원문을 분리한 설계는 검색 성능과 근거 투명성을 동시에 확보하는 데 효과적이었다.
+
+## 참고 자료 및 산출물
+
+- 제주대학교 규정집 전체 페이지: https://www.jejunu.ac.kr/schoolinfo/statusAll/rule.htm
+- 원본 파일: `data/raw_hwp/`
+- 조항 말뭉치: `data/processed/articles.jsonl`
+- Contextual 조항 말뭉치: `data/processed/articles_contextual.jsonl`
+- Baseline 인덱스: `data/index/faiss.index`
+- Contextual 인덱스: `data/index_contextual/faiss.index`, `data/index_contextual/bm25.json`
+- 검색 비교 결과: `data/metadata/retrieval_comparison_contextual.md`
+- 양자화 비교 결과: `data/metadata/quantization_comparison.md`
+- 데모 대시보드: `viz.py`
+"""
+
+
+def parse_markdown(md: str):
+    blocks = []
+    lines = md.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i].rstrip()
+        if line.strip() == "<!-- PAGEBREAK -->":
+            blocks.append({"type": "pagebreak"})
+            i += 1
+            continue
+        if not line.strip():
+            i += 1
+            continue
+        if line.startswith("|") and i + 1 < len(lines) and set(lines[i + 1].replace("|", "").strip()) <= {"-", ":", " "}:
+            table_lines = [line]
+            i += 2
+            while i < len(lines) and lines[i].startswith("|"):
+                table_lines.append(lines[i].rstrip())
+                i += 1
+            rows = []
+            for table_line in table_lines:
+                cells = [cell.strip() for cell in table_line.strip("|").split("|")]
+                rows.append(cells)
+            blocks.append({"type": "table", "rows": rows})
+            continue
+        if line.startswith("#"):
+            level = len(line) - len(line.lstrip("#"))
+            text = line[level:].strip()
+            blocks.append({"type": "heading", "level": level, "text": strip_markdown(text)})
+            i += 1
+            continue
+        if line.startswith("- "):
+            blocks.append({"type": "bullet", "text": strip_markdown(line[2:].strip())})
+            i += 1
+            continue
+
+        paragraph = [line]
+        i += 1
+        while i < len(lines) and lines[i].strip() and not lines[i].startswith(("#", "- ", "|")) and lines[i].strip() != "<!-- PAGEBREAK -->":
+            paragraph.append(lines[i].strip())
+            i += 1
+        blocks.append({"type": "paragraph", "text": strip_markdown(" ".join(paragraph))})
+    return blocks
+
+
+def strip_markdown(text: str) -> str:
+    text = re.sub(r"\*\*(.*?)\*\*", r"\1", text)
+    text = re.sub(r"`([^`]*)`", r"\1", text)
+    return text
+
+
+def w_text(text: str) -> str:
+    return escape(text)
+
+
+def docx_paragraph(text: str = "", style: str | None = None, bullet: bool = False, pagebreak: bool = False):
+    props = ""
+    if style:
+        props += f'<w:pStyle w:val="{style}"/>'
+    if bullet:
+        props += '<w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr>'
+    if props:
+        props = f"<w:pPr>{props}</w:pPr>"
+    if pagebreak:
+        return '<w:p><w:r><w:br w:type="page"/></w:r></w:p>'
+    return f"<w:p>{props}<w:r><w:t xml:space=\"preserve\">{w_text(text)}</w:t></w:r></w:p>"
+
+
+def docx_table(rows: list[list[str]]):
+    body = [
+        '<w:tbl><w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/>'
+        '<w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="999999"/>'
+        '<w:left w:val="single" w:sz="4" w:space="0" w:color="999999"/>'
+        '<w:bottom w:val="single" w:sz="4" w:space="0" w:color="999999"/>'
+        '<w:right w:val="single" w:sz="4" w:space="0" w:color="999999"/>'
+        '<w:insideH w:val="single" w:sz="4" w:space="0" w:color="999999"/>'
+        '<w:insideV w:val="single" w:sz="4" w:space="0" w:color="999999"/></w:tblBorders></w:tblPr>'
+    ]
+    for row in rows:
+        body.append("<w:tr>")
+        for cell in row:
+            body.append(f"<w:tc><w:tcPr><w:tcW w:w=\"2400\" w:type=\"dxa\"/></w:tcPr>{docx_paragraph(strip_markdown(cell))}</w:tc>")
+        body.append("</w:tr>")
+    body.append("</w:tbl>")
+    return "".join(body)
+
+
+def build_docx(blocks, path: Path):
+    body = []
+    for block in blocks:
+        if block["type"] == "pagebreak":
+            body.append(docx_paragraph(pagebreak=True))
+        elif block["type"] == "heading":
+            if block["level"] == 1:
+                body.append(docx_paragraph(block["text"], "Title"))
+            elif block["level"] == 2:
+                body.append(docx_paragraph(block["text"], "Heading1"))
+            else:
+                body.append(docx_paragraph(block["text"], "Heading2"))
+        elif block["type"] == "bullet":
+            body.append(docx_paragraph(block["text"], bullet=True))
+        elif block["type"] == "table":
+            body.append(docx_table(block["rows"]))
+        else:
+            body.append(docx_paragraph(block["text"], "Normal"))
+
+    document_xml = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+<w:body>{''.join(body)}
+<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="720" w:footer="720" w:gutter="0"/></w:sectPr>
+</w:body></w:document>"""
+
+    styles_xml = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:rPr><w:rFonts w:ascii="Malgun Gothic" w:eastAsia="Malgun Gothic"/><w:sz w:val="21"/></w:rPr><w:pPr><w:spacing w:line="160" w:lineRule="auto" w:after="120"/></w:pPr></w:style>
+<w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:rPr><w:rFonts w:ascii="Malgun Gothic" w:eastAsia="Malgun Gothic"/><w:b/><w:sz w:val="32"/></w:rPr><w:pPr><w:jc w:val="center"/><w:spacing w:after="360"/></w:pPr></w:style>
+<w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:rPr><w:rFonts w:ascii="Malgun Gothic" w:eastAsia="Malgun Gothic"/><w:b/><w:sz w:val="28"/></w:rPr><w:pPr><w:spacing w:before="360" w:after="180"/></w:pPr></w:style>
+<w:style w:type="paragraph" w:styleId="Heading2"><w:name w:val="heading 2"/><w:rPr><w:rFonts w:ascii="Malgun Gothic" w:eastAsia="Malgun Gothic"/><w:b/><w:sz w:val="24"/></w:rPr><w:pPr><w:spacing w:before="240" w:after="120"/></w:pPr></w:style>
+<w:style w:type="table" w:styleId="TableGrid"><w:name w:val="Table Grid"/></w:style>
+</w:styles>"""
+
+    numbering_xml = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+<w:abstractNum w:abstractNumId="0"><w:lvl w:ilvl="0"><w:numFmt w:val="bullet"/><w:lvlText w:val="•"/><w:pPr><w:ind w:left="720" w:hanging="360"/></w:pPr></w:lvl></w:abstractNum>
+<w:num w:numId="1"><w:abstractNumId w:val="0"/></w:num>
+</w:numbering>"""
+
+    content_types = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+<Default Extension="xml" ContentType="application/xml"/>
+<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
+<Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/>
+<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>
+<Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>
+</Types>"""
+
+    rels = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
+<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
+</Relationships>"""
+    doc_rels = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/>
+</Relationships>"""
+    now = datetime.now(timezone.utc).isoformat()
+    core = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dc:title>양자화된 LLM 기반 제주대학교 규정 RAG 시스템 구축</dc:title><dc:creator>정내혁</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">{now}</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">{now}</dcterms:modified>
+</cp:coreProperties>"""
+    app = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Codex</Application></Properties>"""
+
+    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr("[Content_Types].xml", content_types)
+        zf.writestr("_rels/.rels", rels)
+        zf.writestr("word/document.xml", document_xml)
+        zf.writestr("word/styles.xml", styles_xml)
+        zf.writestr("word/numbering.xml", numbering_xml)
+        zf.writestr("word/_rels/document.xml.rels", doc_rels)
+        zf.writestr("docProps/core.xml", core)
+        zf.writestr("docProps/app.xml", app)
+
+
+def build_hwpx(blocks, path: Path):
+    paragraphs = []
+    para_id = 0
+    for block in blocks:
+        if block["type"] == "pagebreak":
+            paragraphs.append(hwpx_paragraph("", para_id))
+            para_id += 1
+            continue
+        if block["type"] == "table":
+            for row in block["rows"]:
+                paragraphs.append(hwpx_paragraph(" | ".join(strip_markdown(cell) for cell in row), para_id))
+                para_id += 1
+            continue
+        text = block.get("text", "")
+        paragraphs.append(hwpx_paragraph(text, para_id))
+        para_id += 1
+
+    section_xml = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2016/paragraph">
+{''.join(paragraphs)}
+</hp:sec>"""
+    header_xml = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hh:head xmlns:hh="http://www.hancom.co.kr/hwpml/2016/head" version="1.0">
+<hh:beginNum page="1" footnote="1" endnote="1" pic="1" tbl="1" equation="1"/>
+<hh:refList>
+<hh:fontfaces itemCnt="1"><hh:fontface lang="ko" fontCnt="1"><hh:font id="0" face="맑은 고딕" type="TTF"/></hh:fontface></hh:fontfaces>
+<hh:borderFills itemCnt="1"><hh:borderFill id="0" threeD="0" shadow="0"><hh:slash type="NONE"/><hh:backSlash type="NONE"/><hh:leftBorder type="NONE" width="0.1 mm" color="#000000"/><hh:rightBorder type="NONE" width="0.1 mm" color="#000000"/><hh:topBorder type="NONE" width="0.1 mm" color="#000000"/><hh:bottomBorder type="NONE" width="0.1 mm" color="#000000"/><hh:diagonal type="NONE"/></hh:borderFill></hh:borderFills>
+<hh:charProperties itemCnt="1"><hh:charPr id="0" height="1000" textColor="#000000"><hh:fontRef hangul="0" latin="0" hanja="0" japanese="0" other="0" symbol="0" user="0"/></hh:charPr></hh:charProperties>
+<hh:paraProperties itemCnt="1"><hh:paraPr id="0" tabPrIDRef="0" condense="0" fontLineHeight="0" snapToGrid="1" suppressLineNumbers="0" checked="0"><hh:align horizontal="JUSTIFY" vertical="BASELINE"/><hh:heading type="NONE" idRef="0" level="0"/><hh:breakSetting breakLatinWord="KEEP_WORD" breakNonLatinWord="KEEP_WORD" widowOrphan="0" keepWithNext="0" keepLines="0" pageBreakBefore="0" lineWrap="BREAK"/><hh:margin intent="0" left="0" right="0" prev="0" next="0"/><hh:lineSpacing type="PERCENT" value="160"/></hh:paraPr></hh:paraProperties>
+<hh:styles itemCnt="1"><hh:style id="0" type="PARA" name="바탕글" engName="Normal" paraPrIDRef="0" charPrIDRef="0" nextStyleIDRef="0" langID="1042"/></hh:styles>
+</hh:refList>
+</hh:head>"""
+    content_hpf = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opf:package xmlns:opf="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid">
+<opf:metadata><opf:meta property="dcterms:title">양자화된 LLM 기반 제주대학교 규정 RAG 시스템 구축</opf:meta><opf:meta property="dcterms:creator">정내혁</opf:meta></opf:metadata>
+<opf:manifest>
+<opf:item id="header" href="header.xml" media-type="application/xml"/>
+<opf:item id="section0" href="section0.xml" media-type="application/xml"/>
+<opf:item id="settings" href="settings.xml" media-type="application/xml"/>
+</opf:manifest>
+<opf:spine><opf:itemref idref="section0"/></opf:spine>
+</opf:package>"""
+    container = """<?xml version="1.0" encoding="UTF-8"?>
+<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="Contents/content.hpf" media-type="application/hwp+zip"/></rootfiles></container>"""
+    version = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?><hv:version xmlns:hv="http://www.hancom.co.kr/hwpml/2016/version" major="5" minor="0" micro="0" buildNumber="0"/>"""
+    settings = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?><config-item-set xmlns="urn:oasis:names:tc:opendocument:xmlns:config:1.0"/>"""
+    manifest = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?><manifest xmlns="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"/>"""
+
+    with zipfile.ZipFile(path, "w") as zf:
+        zf.writestr("mimetype", "application/hwp+zip", compress_type=zipfile.ZIP_STORED)
+        zf.writestr("version.xml", version, compress_type=zipfile.ZIP_DEFLATED)
+        zf.writestr("META-INF/container.xml", container, compress_type=zipfile.ZIP_DEFLATED)
+        zf.writestr("Contents/content.hpf", content_hpf, compress_type=zipfile.ZIP_DEFLATED)
+        zf.writestr("Contents/header.xml", header_xml, compress_type=zipfile.ZIP_DEFLATED)
+        zf.writestr("Contents/section0.xml", section_xml, compress_type=zipfile.ZIP_DEFLATED)
+        zf.writestr("Contents/settings.xml", settings, compress_type=zipfile.ZIP_DEFLATED)
+        zf.writestr("Contents/manifest.xml", manifest, compress_type=zipfile.ZIP_DEFLATED)
+
+
+def hwpx_paragraph(text: str, para_id: int):
+    return (
+        f'<hp:p id="{para_id}" paraPrIDRef="0" styleIDRef="0" pageBreak="0" columnBreak="0" merged="0">'
+        f'<hp:run charPrIDRef="0"><hp:t>{escape(text)}</hp:t></hp:run>'
+        f"</hp:p>\n"
+    )
+
+
+def main():
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    numbers = load_project_numbers()
+    md = report_markdown(numbers)
+    blocks = parse_markdown(md)
+
+    md_path = REPORT_DIR / f"{REPORT_STEM}.md"
+    docx_path = REPORT_DIR / f"{REPORT_STEM}.docx"
+    hwpx_path = REPORT_DIR / f"{REPORT_STEM}.hwpx"
+    html_path = REPORT_DIR / f"{REPORT_STEM}.html"
+
+    md_path.write_text(md, encoding="utf-8")
+    build_docx(blocks, docx_path)
+    build_hwpx(blocks, hwpx_path)
+    html_path.write_text(markdown_to_html(md), encoding="utf-8")
+
+    print(f"markdown={md_path}")
+    print(f"docx={docx_path}")
+    print(f"hwpx={hwpx_path}")
+    print(f"html={html_path}")
+
+
+def markdown_to_html(md: str):
+    rows = []
+    for line in md.splitlines():
+        if line.strip() == "<!-- PAGEBREAK -->":
+            rows.append('<div style="page-break-after: always;"></div>')
+        elif line.startswith("# "):
+            rows.append(f"<h1>{html.escape(strip_markdown(line[2:].strip()))}</h1>")
+        elif line.startswith("## "):
+            rows.append(f"<h2>{html.escape(strip_markdown(line[3:].strip()))}</h2>")
+        elif line.startswith("### "):
+            rows.append(f"<h3>{html.escape(strip_markdown(line[4:].strip()))}</h3>")
+        elif line.startswith("- "):
+            rows.append(f"<p>• {html.escape(strip_markdown(line[2:].strip()))}</p>")
+        elif line.startswith("|"):
+            rows.append(f"<pre>{html.escape(line)}</pre>")
+        elif line.strip():
+            rows.append(f"<p>{html.escape(strip_markdown(line.strip()))}</p>")
+    return (
+        "<!doctype html><html><head><meta charset='utf-8'>"
+        "<style>body{font-family:'Malgun Gothic',sans-serif;line-height:1.65;margin:38px;} h1{text-align:center;} h2{margin-top:28px;} p{text-align:justify;} pre{font-family:'Malgun Gothic',sans-serif;white-space:pre-wrap;background:#f7f7f7;padding:6px;}</style>"
+        "</head><body>"
+        + "\n".join(rows)
+        + "</body></html>"
+    )
+
+
+if __name__ == "__main__":
+    main()

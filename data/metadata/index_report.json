@@ -1,0 +1,12 @@
+{
+  "model": "BAAI/bge-m3",
+  "device": "cuda",
+  "batch_size": 16,
+  "max_seq_length": 1024,
+  "articles": 5317,
+  "embedding_dim": 1024,
+  "index_size": 5317,
+  "elapsed_seconds": 62.603,
+  "index_path": "data/index/faiss.index",
+  "metadata_path": "data/index/faiss_metadata.jsonl"
+}

@@ -1,0 +1,2209 @@
+{
+  "files": 275,
+  "total_articles": 5317,
+  "total_addenda": 631,
+  "include_addenda": false,
+  "output": "data/processed/articles_contextual.jsonl",
+  "items": [
+    {
+      "rule_id": "193684_1",
+      "source_file": "제2080호 제주대학교 학칙(2026. 5. 21.).hwp",
+      "status": "chunked",
+      "articles": 468,
+      "addenda": 60,
+      "purpose_summary": "이 학칙은 제주대학교의 교육목적을 달성하기 위한 조직과 학사운영 등에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193684_2",
+      "source_file": "제주대학교 규정 편집기준.pdf",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 JNU 100년 분야의 제주대학교 규정 편집기준에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193684_3",
+      "source_file": "제주대학교 규정 제·개정 및 폐지 절차에 관한 시행 지침(23.3.9.).hwp",
+      "status": "chunked",
+      "articles": 5,
+      "addenda": 1,
+      "purpose_summary": "제주대학교 규정의 제·개정 및 폐지에 관한 절차 등을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_1",
+      "source_file": "제2066호 학사관리에 관한 규정(2026.03.18.개정).hwp",
+      "status": "chunked",
+      "articles": 128,
+      "addenda": 19,
+      "purpose_summary": "이 규정은「제주대학교 학칙」에 따라 학사관리에 관한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_2",
+      "source_file": "제1982호 복수전공 이수에 관한 규정(2024.7.1.).hwp",
+      "status": "chunked",
+      "articles": 29,
+      "addenda": 8,
+      "purpose_summary": "이 규정은 ｢제주대학교 학칙｣ 제52조 및 ｢제주대학교 학사관리에 관한 규정｣ 제35조에 따라 복수전공을 이수하는데 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_3",
+      "source_file": "교직과정 이수에 관한(2023.02.06.).hwp",
+      "status": "chunked",
+      "articles": 26,
+      "addenda": 5,
+      "purpose_summary": "이 규정은「교육공무원법」에 의하여 중등학교 정교사(2급), 보건교사(2급) 및 영양교사(2급) 등의 자격취득을 위하여 설치하는 교직과정 이수에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_4",
+      "source_file": "타 대학과의 학점교류 및 인정에 관한 규정(2025.3.27.).hwp",
+      "status": "chunked",
+      "articles": 41,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 학칙 제60조의 규정에 따라 제주대학교와 국내외 대학(이하 “타 대학”이라 한다)과의 학생교류 수학 및 학점인정에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_5",
+      "source_file": "국내？외 대학 간 공동학위 및 복수학위과정 운영 규정(2023.10.6.전부개정).hwp",
+      "status": "chunked",
+      "articles": 8,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제68조 및 제78조에 따라 제주대학교와 국내·외 대학 간 공동학위 및 복수학위과정 운영에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_6",
+      "source_file": "제2060호 제주대학교 학위수여 규정(2026.2.23.).hwp",
+      "status": "chunked",
+      "articles": 51,
+      "addenda": 9,
+      "purpose_summary": "이 규정은 ｢제주대학교 학칙｣ 제67조에 따라 학위수여에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_7",
+      "source_file": "제2039호 시간제등록생 운영 규정(2025. 6. 19.).hwp",
+      "status": "chunked",
+      "articles": 21,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 ｢제주대학교 학칙｣ 제36조에 따른 시간제등록생의 선발 및 학사관리에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_8",
+      "source_file": "명예졸업증서 수여 규정.hwp",
+      "status": "chunked",
+      "articles": 8,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 명예졸업증서 수여에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_9",
+      "source_file": "학력증명서 발급.hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교의 학력증명서 발급에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_10",
+      "source_file": "제2000호 공학교육 인증에 관한 규정.hwp",
+      "status": "chunked",
+      "articles": 13,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 「제주대학교 학칙」」제52조 제6항에 따라 제주대학교의 공학교육인증에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_11",
+      "source_file": "학생증발급.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 학생증 발급에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_12",
+      "source_file": "제1979호 수의학교육인증에 관한 규정(2024.7.1.).hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제52조제6항에 따른 제주대학교 수의학교육인증에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_13",
+      "source_file": "제2033호 학․석사연계과정운영 규정(2025. 6. 19.).hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제21조제4항에 따라 학․석사 연계과정 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_14",
+      "source_file": "계약학과 설치 및 운영.hwp",
+      "status": "chunked",
+      "articles": 26,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「산업교육 진흥 및 산학연협력 촉진에 관한 법률」제8조, 교육부「계약학과 운영요령」(이하 “운영요령”이라 한다.) 및「제주대학교 학칙」(이하 “학칙”이라 한다) 제7조에 따라 계약학과의 설치 및 운영에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_15",
+      "source_file": "입학전형영향평가에 관한(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 24,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제32조의2 및 ｢제주대학교 조직 및 위원회 등의 설치 규정｣ 제24조에 따라 입학전형 영향평가에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193685_16",
+      "source_file": "공개강좌 운영(2023.02.06.).hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제72조에 따라 공개강좌에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193686_1",
+      "source_file": "제2071호 교원인사 규정(2026.03.18.개정).hwp",
+      "status": "chunked",
+      "articles": 101,
+      "addenda": 16,
+      "purpose_summary": "이 규정은 교원의 인사에 관한 기준․절차 및 복무 등을 정하여 적정한 인사관리를 목적으로 한다."
+    },
+    {
+      "rule_id": "193686_2",
+      "source_file": "교육대학 전임교원 임용 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 교무행정 분야의 2. 교육대학 전임교원 임용 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193686_3",
+      "source_file": "교원겸보 규정(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 46,
+      "addenda": 8,
+      "purpose_summary": "이 규정은 국립학교설치령 제6조 및 제7조, 제주대학교학칙 제3조 및 제4조의 규정에 의하여 제주대학교 교원 겸보사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193686_4",
+      "source_file": "제2034호 교수업적평가 규정(2025. 6. 19.).hwp",
+      "status": "chunked",
+      "articles": 52,
+      "addenda": 8,
+      "purpose_summary": "이 규정은 제주대학교 전임교원의 교육, 연구‧창작, 산학협력, 봉사 활동의 업적을 평가‧관리하기 위하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193686_5",
+      "source_file": "학술상 수여에 관한.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 교무행정 분야의 5. 학술상 수여에 관한에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193686_6",
+      "source_file": "제2049호_총장임용후보자 선정에 관한 규정(20251031).hwp",
+      "status": "chunked",
+      "articles": 43,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 6. 총장임용후보자 선정에 관한 규정의 총장임용후보자 선정방법, 정의, 위원의 임명, 위원장 등, 회의 및 운영 등에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193686_7",
+      "source_file": "제2035호 성과급적 연봉제 운영 규정(2025. 6. 19.).hwp",
+      "status": "chunked",
+      "articles": 12,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「공무원보수규정」에서 정하는 성과급적 연봉제 시행에 따라 제주대학교 전임교원의 성과급적 연봉제 운영에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193686_8",
+      "source_file": "제1990호 연구원 등의 인사관리에 관한 규정(2024.7.31.).hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 부속시설 등의 연구원과 연구보조원(이하 “연구원 등”이라 한다.)의 인사관리에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193686_9",
+      "source_file": "연구윤리 규정(2024.2.28.) (수정).hwp",
+      "status": "chunked",
+      "articles": 56,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 제주대학교 연구자의 연구윤리를 확립하고 연구부정행위를 예방하며, 연구부정행위 발생 시 연구진실성위원회를 통한 공정하고 체계적인 진실성 검증을 위해 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193686_10",
+      "source_file": "교원 창업에 관한.hwp",
+      "status": "chunked",
+      "articles": 49,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 교원으로서 재직 중 「벤처기업 육성에 관한 특별조치법」 제2조에서 정의하는 실험실공장, 벤처기업 등을 창업하거나 또는 그 임원으로 취임하고자 하는 교원,「산업교육진흥 및 산학연협력촉진에 관한 법률」 제2조제8호와 제9호에 근거한 제주대학교 산학연협력기술지주회사의 자회사 대표자 또는 임원으로 취임하고자 하는 교원의 창업에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_1",
+      "source_file": "제2078호 조직 및 위원회 등의 설치 규정(2026.03.31.개정).hwp",
+      "status": "chunked",
+      "articles": 133,
+      "addenda": 11,
+      "purpose_summary": "이 규정은 제주대학교 학칙 제4조, 제9조제5항 및 제18조에 의하여 부속시설, 기타 하부조직, 보좌기관 및 각종 위원회를 설치하는데 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_2",
+      "source_file": "제2022호 사무분장(2025.2.27.).hwp",
+      "status": "chunked",
+      "articles": 53,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제9조제4항에에 따라 처․국의 하부조직과 본부, 단과대학․대학원 및 부속시설 등의 분장 사무를 구체적으로 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_3",
+      "source_file": "제2007호 위임전결 규정(2024.12.26.).hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 4,
+      "purpose_summary": "이 규정은「행정 효율과 협업 촉진에 관한 규정」제10조제2항에 따라 제주대학교의 제반 업무 중 보조기관 또는 단위기관에 위임하여 전결할 사항과 그 절차를 정하여 책임행정체제를 구축하고 행정의 능률을 도모하며, 신속한 업무처리를 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_4",
+      "source_file": "제2057호 제주대학교 보안업무처리 규정(2026.2.23.).hwp",
+      "status": "chunked",
+      "articles": 33,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 「교육부 보안업무규정 시행세칙」에 의하여 제주대학교의 보안업무 세부시행에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_5",
+      "source_file": "당직 및 비상근무 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 일반행정 분야의 5. 당직 및 비상근무 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193687_6",
+      "source_file": "대학회계직원 규정.hwp",
+      "status": "chunked",
+      "articles": 28,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 대학회계직원의 채용ㆍ보수ㆍ복무 등 에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_7",
+      "source_file": "표창.hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교에서 시행하는 표창 및 정부표창 대상자 선발업무에 필요한 기준과 절차를 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_8",
+      "source_file": "고문변호사 위촉에 관한.hwp",
+      "status": "chunked",
+      "articles": 6,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교고문변호사(이하“고문변호사”라 한다)의 위촉에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_9",
+      "source_file": "공간사용 규정(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 41,
+      "addenda": 7,
+      "purpose_summary": "이 규정은 제주대학교 시설 공간(이하 “공간”이라 한다)의 효율적 관리 및 운용에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_10",
+      "source_file": "학생회관 관리.hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 학생의 후생복지를 증진하고 면학의 분위기를 조성하기 위해 설치한 학생회관의 운영관리에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_11",
+      "source_file": "관사 관리.hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 본 대학교 관사의 보호와 그 취득 유지관리 및 운영 등(이하 “관리”라 한다)에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193687_12",
+      "source_file": "연구실 안전관리(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 50,
+      "addenda": 4,
+      "purpose_summary": "이 규정은「연구실 안전환경 조성에 관한 법률」에 따라 제주대학교에 설치된 연구실의 안전한 환경을 조성하기 위해 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_1",
+      "source_file": "방사선 안전관리 규정.hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「원자력안전법」 제53조제3항 및 같은 법 시행규칙 제60조에 따른 안전관리규정으로서 제주대학교에서 연구 및 교육용으로 사용하는 방사성동위원소와 방사선발생장치의 사용, 저장, 운반, 폐기 및 그 밖의 취급상에 필요한 안전관리 기준을 정하여 방사선에 따른 인체, 물체 및 공공상의 장해를 미리 방지하는 것을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_2",
+      "source_file": "자체평가(24.2.28.).hwp",
+      "status": "chunked",
+      "articles": 25,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「고등교육법」 제11조의2제1항에서 정한 대학의 평가에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_3",
+      "source_file": "연구소 설치에 관한.hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 부설연구소 및 연구센터의 설치운영에 필요한 사항을 정하는데 목적이 있다."
+    },
+    {
+      "rule_id": "193688_4",
+      "source_file": "유학생 관리(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 19,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 교육부의 「외국인 유학생 표준업무 처리요령」, 「출입국관리법」제19조의4와 같은 법 시행령 제24조의8 및 「제주대학교 학칙」 제71조에 따라 제주대학교에 입학하는 외국인 유학생들의 효율적 학사관리와 생활지도에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_5",
+      "source_file": "행정감사.hwp",
+      "status": "chunked",
+      "articles": 29,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 행정 전반에 대한 감사를 실시하는 데 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_6",
+      "source_file": "내부공익신고에 관한.hwp",
+      "status": "chunked",
+      "articles": 24,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 공무원 행동강령」 제19조에 따른 신고사항 중 내부공익신고(이하 ‘신고’라 한다)에 대해 원활하고 효율적인 접수․처리 및 포상 등을 위해 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_7",
+      "source_file": "재정 및 회계의 운영에 관한 규정(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 29,
+      "addenda": 3,
+      "purpose_summary": "이 규정은「국립대학의 회계 설치 및 재정 운영에 관한 법률」(이하 “법”이라 한다) 등 관련 법령에 따라 제주대학교의 재정 및 회계 운영에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_8",
+      "source_file": "제1978호 대학구조개혁 추진에 관한 규정(2024.7.1.).hwp",
+      "status": "chunked",
+      "articles": 20,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 발전적인 대학구조개혁을 추진하기 위한 절차와 방법 등 제반사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_9",
+      "source_file": "장학금 규정(24.2.28.).hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제88조에 따라 장학생 선정과 장학금 지급에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_10",
+      "source_file": "학생상벌에 관한(2024.2.28.) (수정).hwp",
+      "status": "chunked",
+      "articles": 39,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제85조 및 제86조에 따라 학생 상벌에 관한 세부 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_11",
+      "source_file": "생물안전관리 규정(2024.2.28.) (수정).hwp",
+      "status": "chunked",
+      "articles": 30,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 ｢유전자변형생물체의 국가간 이동 등에 관한 법률｣에 따라 제주대학교의 시험·연구용 유전자변형생물체의 안전한 연구환경 기반을 마련하고, 시험·연구종사자의 안전을 확보하기 위해 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193688_12",
+      "source_file": "산업안전보건관리 규정(2024.5.14.).hwp",
+      "status": "chunked",
+      "articles": 58,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 산업안전보건법 제25조에 따라 제주대학교의 안전보건 활동에 관한 사항을 규정하여 안전하고 쾌적한 작업환경을 조성함으로써 근로자의 안전과 보건을 유지·증진함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_1",
+      "source_file": "양성평등위원회 규정.hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 대학의 양성평등을 실현하기 위한 정책의 수립과 시행을 위하여 제주대학교 「조직 및 위원회 설치에 관한 규정」 제 28조에 따라 제주대학교 양성평등위원회(이하 “위원회”라 한다)의 구성과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_2",
+      "source_file": "교원양성위원회.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 ｢교원자격검정령｣ 제17조의2에서 정한 교원양성위원회의 구성과 기능 및 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_3",
+      "source_file": "교수회 규정(2023.06.07.).hwp",
+      "status": "chunked",
+      "articles": 32,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 제주대학교 학칙 제14조에 따라 제주대학교 교수회(이하 “교수회”라 한다)를 둠으로써, 대학의 민주성과 자율성을 확보하고 대학운영에 교수의 능동적 참여를 보장하여 대학의 발전에 기여하고 교수의 교권과 권익을 옹호함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_4",
+      "source_file": "교수평의회 규정.hwp",
+      "status": "chunked",
+      "articles": 34,
+      "addenda": 5,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제17조제3항에 따른 제주대학교 교수평의회의 조직과 운영에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_5",
+      "source_file": "제2056호 제주대학교 학무회 운영 규정(2026.2.20.).hwp",
+      "status": "chunked",
+      "articles": 38,
+      "addenda": 8,
+      "purpose_summary": "이 규정은 학칙 제16조에 따라 학무회의 구성과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_6",
+      "source_file": "규정심의위원회(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 규정심의위원회의 구성과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_7",
+      "source_file": "제2076호 학사관리위원회 규정(2026. 3. 27.).hwp",
+      "status": "chunked",
+      "articles": 30,
+      "addenda": 7,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제8조에서 정한 학사관리위원회의 구성과 기능 및 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_8",
+      "source_file": "근무성적평정조정위원회.hwp",
+      "status": "chunked",
+      "articles": 8,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「공무원 성과평가 등에 관한 규정」제18조에 따른 근무성적평가 위원회의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_9",
+      "source_file": "보통고충심사위원회운영.hwp",
+      "status": "chunked",
+      "articles": 19,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「공무원고충처리규정」제3조에 따른 제주대학교 보통고충심사위원회의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_10",
+      "source_file": "보통승진심사위원회.hwp",
+      "status": "chunked",
+      "articles": 12,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「국가공무원법」제40조, 제40조의2와 제40조의3에 따라 제주대학교 7급 이하 공무원을 승진임용할 때에 공정하고 객관적으로 심사하기 위하여 제주대학교 보통승진심사위원회의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_11",
+      "source_file": "교육대학 정년보장교원임용심사위원회 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 위원회운영 분야의 11. 교육대학 청년보장교원임용심사위원회 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193691_12",
+      "source_file": "교육공무원 보통고충심사위원회.hwp",
+      "status": "chunked",
+      "articles": 20,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 교육공무원법 제49조제2항 및 공무원고충처리규정 제3조의4의 규정에 의하여 제주대학교 교육공무원의 인사상담 및 고충심사를 위한 교육공무원 보통고충심사위원회 (이하 “위원회”라 한다)의 조직과 운영에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_13",
+      "source_file": "학술연구진흥위원회(2024.2.28.) (수정).hwp",
+      "status": "chunked",
+      "articles": 21,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 학술연구의 촉진 및 진흥에 관한 사항을 심의하기 위하여「제주대학교 조직 및 위원회 등의 설치규정」제9조제2항에 따른 제주대학교 학술연구진흥위원회의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_14",
+      "source_file": "연구비감사위원회(제1958호 2024.02.28.).hwp",
+      "status": "chunked",
+      "articles": 25,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제13조에 따라 제주대학교 연구비감사위원회의 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193691_15",
+      "source_file": "연구윤리위원회 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 위원회운영 분야의 15. 연구윤리위원회 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193691_16",
+      "source_file": "학생지원위원회 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 위원회운영 분야의 16. 학생지원위원회 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193692_1",
+      "source_file": "재정운영위원회 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 위원회운영 분야의 17. 재정운영위원회 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193692_2",
+      "source_file": "직장방위협의회.hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 향토예비군설치법 시행령 제23조의4의 규정에 따른 제주대학교 직장방위협의회(이하 “협의회”라 한다)의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_3",
+      "source_file": "캠퍼스환경조성위원회 규정(2024.5.14.).hwp",
+      "status": "chunked",
+      "articles": 28,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 제주대학교 캠퍼스 환경조성위원회의 구성과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_4",
+      "source_file": "제2058호 제주대학교 생명윤리심의위원회 규정(2026.2.23.).hwp",
+      "status": "chunked",
+      "articles": 25,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제16조제1항에 따른 제주대학교 생명윤리심의위원회의 구성 및 운영 등에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_5",
+      "source_file": "제2059호 제주대학교 동물실험윤리위원회 규정(2026.2.23.).hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 4,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」 제17조제2항에 따라 동물실험윤리위원회의 구성과 운영 등에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_6",
+      "source_file": "미래혁신위원회(2022.08.29.).hwp",
+      "status": "chunked",
+      "articles": 13,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 조직 및 위원회 등의 설치에 관한 규정 제6조의2에 따른 제주대학교 미래혁신위원회의 설치와 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_7",
+      "source_file": "의과대학 발전위원회 규정.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 조직 및 위원회 등의 설치규정 제18조에 따라 제주대학교 의과대학 발전위원회의 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_8",
+      "source_file": "등록금심의위원회(2022.08.29.).hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 대학 등록금에 관한 규칙 제2조 및 제주대학교 조직 및 위원회 등의 설치규정 제19조에 따른 등록금심의위원회(이하 “위원회”라 한다)의 구성 및 운영에 관하여 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_9",
+      "source_file": "제2067호 대학입학전형관리위원회 규정(2026.03.18.개정).hwp",
+      "status": "chunked",
+      "articles": 31,
+      "addenda": 8,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제7조에 따른 대학입학전형관리위원회의 기능과 운영에 관한 사항을 정하는 것을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_10",
+      "source_file": "제1770호 제주대학교 생물안전위원회 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 위원회운영 분야의 26. 생물안전위원회에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193692_11",
+      "source_file": "제2065호 기초학문진흥위원회 규정(2026.03.18.개정).hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치 규정｣ 제21조에 따라 제주대학교 기초학문진흥위원회의 구성과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_12",
+      "source_file": "제2052호 취업지원위원회 규정(251112).hwp",
+      "status": "chunked",
+      "articles": 32,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치 규정｣ 제22조에 따라 제주대학교 취업지원위원회의 구성과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_13",
+      "source_file": "제2052호 창업지원위원회 규정(251112).hwp",
+      "status": "chunked",
+      "articles": 27,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치 규정｣ 제23조에 따라 제주대학교 창업지원위원회의 구성과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_14",
+      "source_file": "종합안전관리심의위원회(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 28,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」제26조에 따라 제주대학교 종합안전관리심의위원회의 구성·운영 및 그 밖에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_15",
+      "source_file": "학위검증위원회(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 29,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」제27조에 따라 제주대학교 학위검증위원회의 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193692_16",
+      "source_file": "대학평의원회 규정.hwp",
+      "status": "chunked",
+      "articles": 16,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제17조2에 따른 제주대학교 대학평의원회의 구성과 운영 등에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_1",
+      "source_file": "수의과대학 수의학과교실 운영.hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제6조제6항에 따른 제주대학교 수의과대학 수의학과교실의 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_2",
+      "source_file": "8. 생명자원과학대학 최고농업경영자과정.hwp",
+      "status": "chunked",
+      "articles": 25,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제72조에 따라 생명자원과학대학에 설치하는 최고농업경영자과정의 조직과 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_3",
+      "source_file": "해기품질관리(2022.05.02.).hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「선원의 훈련·자격증명 및 당직근무의 기준에 관한 국제협약」(STCW협약)과「선박직원법」에 따라 해기사 지정교육기관의 교육목적 달성과 해기품질관리체제․ 해기품질평가 등에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_4",
+      "source_file": "4 해양과학대학최고해양수산업경영자과정규정(2014.05.15. 규칙 제1236호).hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 ｢제주대학교 학칙｣ 제72조에 따라 제주대학교 해양과학대학에 설치하는 최고해양수산업경영자과정의 조직과 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_5",
+      "source_file": "자연과학대학 생활과학지도자과정.hwp",
+      "status": "chunked",
+      "articles": 24,
+      "addenda": 3,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제72조에 따라 제주대학교 자연과학대학의 공개강좌 운영에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_6",
+      "source_file": "인문대학 인문학최고지도자과정 운영 규정(20141204).hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교학칙 제72조(공개강좌)에 의하여 제주대학교 인문대학에 설치하는 인문학최고지도자과정의 조직과 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_7",
+      "source_file": "미래융합대학 학사운영(2024.11.06.).hwp",
+      "status": "chunked",
+      "articles": 30,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제21조의3에 따라 제주대학교 미래융합대학 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193693_8",
+      "source_file": "제2074호 제주대학교 글로벌노마드대학 운영 규정(2026. 3. 27.).hwp",
+      "status": "chunked",
+      "articles": 19,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제21조의4에 따라 제주대학교 글로벌노마드대학 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193694_1",
+      "source_file": "제2082호 대학원 학사운영 규정(2026. 5. 21.).hwp",
+      "status": "chunked",
+      "articles": 49,
+      "addenda": 16,
+      "purpose_summary": "이 규정은 제주대학교 일반대학원 학사운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193694_2",
+      "source_file": "대학원 장학금지급 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 일반대학원 분야의 2. 대학원 장학금지급 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193694_3",
+      "source_file": "대학원 연구생에 관한.hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 학칙 제75조의 규정에 의한 연구생에 관한 지원자격, 신분 및 등록 등에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193694_4",
+      "source_file": "대학원 수료연구생 운영.hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제77조에 따라 대학원 수료연구생의 자격·신분 및 등록 등에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193694_5",
+      "source_file": "대학원혁신실.hwp",
+      "status": "chunked",
+      "articles": 6,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제9조제5항 및 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제4항에 따라 제주대학교 대학원혁신실의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193695_1",
+      "source_file": "통역번역대학원 학사운영.hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 통역번역대학원 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193695_2",
+      "source_file": "제2076호 제주대학교 의과대학 운영 규정(2026. 3. 27.) 수정.hwp",
+      "status": "chunked",
+      "articles": 30,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 제주대학교 의과대학의 조직 및 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193695_3",
+      "source_file": "의학전문대학원 학사운영 규정.hwp",
+      "status": "chunked",
+      "articles": 39,
+      "addenda": 3,
+      "purpose_summary": "이 규정은「제주대학교 학칙」및「제주대학교 학사관리에 관한 규정」에 따라 제주대학교 의학전문대학원(이하 “의학전문대학원”이라 한다)의 교육목적과 목표를 달성하기 위하여 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193695_4",
+      "source_file": "법학전문대학원 학사운영(2024.02.28.).hwp",
+      "status": "chunked",
+      "articles": 118,
+      "addenda": 8,
+      "purpose_summary": "「제주대학교 법학전문대학원 학사운영 규정」은「고등교육법」 및 같은 법 시행령, 「법학전문대학원 설치․운영에 관한 법률」 및 같은 법 시행령과 「제주대학교 학칙」에 따라 제주대학교 법학전문대학원의 교육목표를 달성하기 위한 학사운영 등에 관하여 세부사항을 정하는 것을 목적으로 한다."
+    },
+    {
+      "rule_id": "193695_5",
+      "source_file": "법학전문대학원 공개강좌 운영.hwp",
+      "status": "chunked",
+      "articles": 16,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교학칙 제72조에 따른 공개강좌의 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193695_6",
+      "source_file": "법학전문대학원 자체평가.hwp",
+      "status": "chunked",
+      "articles": 13,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「법학전문대학원 설치․운영에 관한 법률」 제27조와 제32조, 같은 법 시행령 제18조와 제19조에 따라 제주대학교 법학전문대학원의 자기점검 및 자체평가에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_1",
+      "source_file": "제2081호 교육대학원 학사운영 규정(2026. 5. 21.).hwp",
+      "status": "chunked",
+      "articles": 51,
+      "addenda": 9,
+      "purpose_summary": "이 규정은 제주대학교 교육대학원 학사운영에 따른 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_2",
+      "source_file": "제2068호 교육대학원 학사운영 규정(2026.03.18.개정).hwp",
+      "status": "chunked",
+      "articles": 51,
+      "addenda": 8,
+      "purpose_summary": "이 규정은 제주대학교 교육대학원 학사운영에 따른 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_3",
+      "source_file": "제주대학교 경영대학원 학사운영 규정(2023.09.01.).hwp",
+      "status": "chunked",
+      "articles": 42,
+      "addenda": 7,
+      "purpose_summary": "이 규정은「제주대학교 학칙」 및「제주대학교 학사관리에 관한 규정」에 따라 제주대학교 경영대학원 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_4",
+      "source_file": "경영대학원 장학금지급 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 특수대학원 분야의 4. 경영대학원 장학금지급 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193696_5",
+      "source_file": "경영대학원 공개강좌 운영.hwp",
+      "status": "chunked",
+      "articles": 26,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제72조에 따라 공개강좌를 운영함에 있어 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_6",
+      "source_file": "행정대학원 학사운영 규정(2023.12.12.).hwp",
+      "status": "chunked",
+      "articles": 42,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 및「제주대학교 학사관리에 관한 규정」에 따라 제주대학교 행정대학원 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_7",
+      "source_file": "행정대학원 장학금지급 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 특수대학원 분야의 7. 행정대학원 장학금지급 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193696_8",
+      "source_file": "행정대학원 공개강좌 운영.hwp",
+      "status": "chunked",
+      "articles": 20,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제72조에 따른 공개강좌의 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_9",
+      "source_file": "산업대학원 학사운영 규정.hwp",
+      "status": "chunked",
+      "articles": 35,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 제주대학교 학칙」및「제주대학교 학사관리에 관한 규정」에 따라 제주대학교 산업대학원 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_10",
+      "source_file": "산업대학원 장학금지급 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 특수대학원 분야의 10. 산업대학원 장학금 지급에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193696_11",
+      "source_file": "산업대학원 공개강좌 운영.hwp",
+      "status": "chunked",
+      "articles": 25,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교학칙」제72조에 따라 공개강좌의 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_12",
+      "source_file": "제2053호 사회교육대학원 학사운영 규정(251112).hwp",
+      "status": "chunked",
+      "articles": 32,
+      "addenda": 5,
+      "purpose_summary": "이 규정은「제주대학교 학칙」및「제주대학교 학사관리에 관한 규정」에 따라 제주대학교 사회교육대학원 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193696_13",
+      "source_file": "제2069호 보건복지대학원 학사운영 규정(2026.03.18.개정).hwp",
+      "status": "chunked",
+      "articles": 30,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 및「제주대학교 학사관리에 관한 규정」에 따라 제주대학교 보건복지대학원 학사운영에 필요한 세부사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_1",
+      "source_file": "취업전략본부 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 총장직할지원시설 분야의 1. 취업전략본부 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_2",
+      "source_file": "제1958호 제주대학교 국제교류본부 규정 폐지 규정.hwp",
+      "status": "chunked",
+      "articles": 3,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 2. 국제교류처 폐지의 시행일, 다른 규정의 폐지 등에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_3",
+      "source_file": "제1958호 제주대학교 경영혁신본부 규정 폐지 규정.hwp",
+      "status": "chunked",
+      "articles": 3,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 3. 경영혁신본부 폐지의 시행일, 다른 규정의 폐지 등에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_4",
+      "source_file": "홍보실 규정(2023.08.04.).hwp",
+      "status": "chunked",
+      "articles": 7,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따라 제주대학교 홍보실의 조직과 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_5",
+      "source_file": "교육혁신본부 규정 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 총장직할지원시설 분야의 5. 교육혁신본부 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_6",
+      "source_file": "제2050호 제주대학교 3단계 산학연협력 선도대학(LINC3.0)육성사업단 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 총장직할지원시설 분야의 6. 3단계 산학연협력 선도대학(LINC3.0) 육성사업단에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_7",
+      "source_file": "창업지원단 규정(2024.1.24.개정).hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치 규정｣제2조제3항에 따른 제주대학교 창업지원단의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_8",
+      "source_file": "제1958호 제주대학교 산학연구본부 규정 폐지 규정.hwp",
+      "status": "chunked",
+      "articles": 3,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 8. 산학연구본부 폐지의 시행일, 다른 규정의 폐지 등에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_9",
+      "source_file": "제2052호 대학일자리플러스센터 규정(251112).hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제9조제5항 및 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따라 고용노동부 대학일자리플러스센터 사업의 효과적인 수행을 위한 제주대학교 대학일자리플러스센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_10",
+      "source_file": "제1958호 제주대학교 입학본부본부 규정 폐지 규정.hwp",
+      "status": "chunked",
+      "articles": 3,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 10. 입학본부 폐지의 시행일, 다른 규정의 폐지 등에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_11",
+      "source_file": "소프트웨어융합교육원 규정(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제9조제5항 및「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 소프트웨어융합교육원의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_12",
+      "source_file": "제1958호 제주대학교 정보화본부 규정 폐지 규정.hwp",
+      "status": "chunked",
+      "articles": 3,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 12. 정보화본부 폐지의 시행일, 다른 규정의 폐지 등에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193698_13",
+      "source_file": "교양교육원(2023.02.06.).hwp",
+      "status": "chunked",
+      "articles": 6,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제9조제5항 및 「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따라 제주대학교 교양교육원의 조직과 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_19",
+      "source_file": "원격교육원.hwp",
+      "status": "chunked",
+      "articles": 36,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 학칙」제9조제5항 및「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따라 제주대학교 원격교육원의 관리와 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_14",
+      "source_file": "제1963호 대외협력홍보실 규정(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 7,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따라 제주대학교 대외협력홍보실의 조직과 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_15",
+      "source_file": "제2055호 제주대학교 RISE사업단 규정(251112).hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치 규정｣제2조제3항에 따른 ｢제주대학교 지역혁신중심 대학지원체계(RISE) 사업단｣의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_16",
+      "source_file": "제2072호 글로컬대학사업단 규정(2026.03.18.제정).hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 글로컬대학사업의 원활한 운영을 위하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193698_17",
+      "source_file": "제2077호 AI융합원 규정(2026.3.31.) 수정.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따른 제주대학교 AI융합원의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_2",
+      "source_file": "원격교육센터 규정 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 1. 원격교육센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193701_1",
+      "source_file": "제2048호 중앙도서관 규정(2025. 9. 5.).hwp",
+      "status": "chunked",
+      "articles": 50,
+      "addenda": 6,
+      "purpose_summary": "이 규정은 ｢제주대학교 학칙｣ 제4조의2에 따른 중앙도서관 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_3",
+      "source_file": "제2054호 박물관 규정(251112).hwp",
+      "status": "chunked",
+      "articles": 29,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 제주대학교 조직 및 위원회 등의 설치규정 제2조제2항에 따른 제주대학교 박물관(이하“박물관”이라 한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_4",
+      "source_file": "정보통신원(2019.11.29.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 4. 정보통신원 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193701_5",
+      "source_file": "제주대학교 학생생활관 규정(2024.2.28.) (수정).hwp",
+      "status": "chunked",
+      "articles": 52,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 학생의 면학을 위한 생활의 편의를 제공하기 위하여「제주대학교 조직 및 위원회 등의 설치규정」제2조 제2항에 따른 학생생활관의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_6",
+      "source_file": "외국어교육원 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 6. 외국어교육원 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193701_7",
+      "source_file": "공동실험실습관.hwp",
+      "status": "chunked",
+      "articles": 21,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 제주대학교 조직 및 위원회 등의 설치규정 제2조제2항에 따른 제주대학교 공동실험실습관(이하 “실험관”이라 한다)의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_8",
+      "source_file": "신문방송사 폐지.hwp",
+      "status": "chunked",
+      "articles": 2,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 8. 신문방송사 폐지의 시행일, 다른 규정의 폐지 등에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193701_9",
+      "source_file": "중소기업종합지원센터.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 9. 중소기업종합지원센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193701_10",
+      "source_file": "평생교육원.hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」 제2조 제2항에 따른 제주대학교 평생교육원의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_11",
+      "source_file": "과학영재교육원.hwp",
+      "status": "chunked",
+      "articles": 25,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 조직 및 위원회 등의 설치규정 제2조제2항에 따른 제주대학교 과학영재교육원(이하 “교육원”라한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_12",
+      "source_file": "체육진흥센터.hwp",
+      "status": "chunked",
+      "articles": 26,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조 제2항에 따른 제주대학교 체육진흥센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_13",
+      "source_file": "종합서비스센터(2022.06.28.).hwp",
+      "status": "chunked",
+      "articles": 20,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제2조제2항에 따른 제주대학교 종합서비스센터의 조직과 운영에 필요한 사항을 정하여 민원인에게 양질의 행정서비스를 신속하게 제공할 수 있도록 종합적이고 효율적인 봉사행정 체계를 확립함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_14",
+      "source_file": "건강증진센터 규정.hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 건강증진센터(이하 “센터”라 한다)의 조직과 운영 등에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_15",
+      "source_file": "WISET 제주지역센터(2022.08.29.).hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 제주대학교 조직 및 위원회 등의 설치규정 제2조제4항에 따른 제주대학교 WISET 제주지역센터(이하 “센터”라 한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_16",
+      "source_file": "제1999호 공학교육혁신센터 규정.hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 3,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조제2항에 따른 공학교육혁신을 위한 방향을 수립하고 공학교육인증프로그램 운영 및 창의적인 평가방법 등을 개발하기 위하여 설치하는 제주대학교 공학교육혁신센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_17",
+      "source_file": "리걸클리닉센터.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 리걸클리닉센터(이하 “센터”라 한다)의 조직과 운영에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_18",
+      "source_file": "국어문화원.hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 국어기본법 제24조에 따라 설치한 제주대학교 국어문화원(이하 “국어문화원”이라 한다)에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193701_20",
+      "source_file": "장애학생지원센터(2022.08.29.).hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 4,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」 제2조제2항에 따른 제주대학교 장애학생지원센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_1",
+      "source_file": "야생동물구조센터.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 조직 및 위원회 등의 설치규정 제2조제4항에 따른 제주대학교 야생동물구조센터(이하 “센터”라 한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_2",
+      "source_file": "해양스포츠센터.hwp",
+      "status": "chunked",
+      "articles": 12,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조제4항에 따른 제주대학교 해양스포츠센터(이하 “센터”라 한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_3",
+      "source_file": "실험동물센터 규정(2024.5.14.).hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조 제2항에 따른 제주대학교 실험동물센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_4",
+      "source_file": "제2011호 제주대학교 소리어울림멘토링센터 규정 폐지 규정(2025.2.27.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 23. 소리어울림 멘토링센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_5",
+      "source_file": "제2070호 재일제주인센터 규정(2026.03.18.개정).hwp",
+      "status": "chunked",
+      "articles": 13,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조 제2항에 따라 제주대학교 재일제주인센터의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_6",
+      "source_file": "교직부폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 25. 교직부 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_7",
+      "source_file": "사회봉사센터.hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」 제2조제2항에 따른 제주대학교 사회봉사센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_8",
+      "source_file": "융합형디자인대학 육성사업단 운영 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 27. 융합형디자인대학 육성사업단 운영 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_9",
+      "source_file": "학생군사교육단.hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 학생군사교육단 운영 및 대학 소속 학군사관후보생 군사교육의 실시에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_10",
+      "source_file": "박물관 공개강좌.hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교 학칙 제72조 규정에 의거 공개강좌를 운영함에 있어 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_11",
+      "source_file": "교사교육센터.hwp",
+      "status": "chunked",
+      "articles": 12,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 우수 교원 양성을 위한 제주대학교 교사교육센터(이하 “센터”라 한다)의 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_12",
+      "source_file": "제2063호 제주대학교 글로벌교원양성 거점대학(GTU)사업단 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 31. 글로벌교원양성 거점대학(GTU)사업단 규정 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_13",
+      "source_file": "그린캠퍼스사업단 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 32. 그린캠퍼스 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_14",
+      "source_file": "기록관.hwp",
+      "status": "chunked",
+      "articles": 22,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 학칙 제4조 및 조직 및 위원회 등의 설치 규정에 의한 지원시설로서 제주대학교 기록관(이하 “기록관”이라 한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_15",
+      "source_file": "식품영양관리지원사업단.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 34. 식품영양관리지원사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_16",
+      "source_file": "직장어린이집(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 35,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 영유아보육법 제10조 제4호에 의하여 설치하는 제주대학교 직장어린이집의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193702_17",
+      "source_file": "관광융합소프트웨어인력양성사업단 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 36. 관광융합소프트웨어인력양성사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_18",
+      "source_file": "제2064호 제주대학교 스마트그리드와 청정에너지 융복합산업 인력양성 사업단 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 37. 스마트그리드와 청정에너지 융복합산업 인력양성 사업단 규정 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_19",
+      "source_file": "아열대 농생명 융복합산업 인재양성 사업단 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 38. 아열대 농생명 융복합산업 인력양성 사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193702_20",
+      "source_file": "제주문화콘텐츠 창의인재 양성사업단 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 39. 제주문화콘텐츠 창의인재 양성사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_1",
+      "source_file": "생물다양성 기반 천연화장품산업 인재양성 사업단 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 40. 생물다양성 기반 천연화장품산업 인재양성 사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_2",
+      "source_file": "제2008호 국제개발협력센터 규정(2024.12.26.).hwp",
+      "status": "chunked",
+      "articles": 29,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제4조 및 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 국제개발협력센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_3",
+      "source_file": "제2004호 제주대학교 교육수요자만족도관리센터 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 42. 교육수요자만족도관리센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_4",
+      "source_file": "학생상담센터.hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 1,
+      "purpose_summary": "센터는 대학생들의 전인적 성장 발달과 학교생활의 원만한 적응 및 사회진출 준비를 위한 상담·연구 활동을 도모하여 대학생활의 질적 향상과 지역사회 발전에 기여함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_5",
+      "source_file": "교사대 연계를 통한 SW기반 창의융합 교원양성사업단 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 44. 교사대 연계를 통한 SW기반 창의융합 교원 양성사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_6",
+      "source_file": "말 6차산업 창의인재 양성사업단 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 45. 말 6차산업 창의인재 양성사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_7",
+      "source_file": "상무공자학원 규정.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주대학교와 중국 대외경제무역대학과의 제주대학교 상무공자학원 공동설립에 관한 협정서에 의거 제주대학교에 설치하는 제주대학교 상무공자학원(이하 “학원”이라 한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_8",
+      "source_file": "제주국제자유도시 중국비지니스 무역전문 인력양성 특성화사업단 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 47. 제주국제자유도시 중국비지니스 무역전문 인력양성 특성화 사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_9",
+      "source_file": "지식재산교육센터 규정(2022.05.02.).hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제4조 및「제주대학교 조직 및 위원회 등의 설치규정」 제2조 제2항에 따라 지식재산 인재양성을 위한 교육 수행과 사업 추진을 위한 제주대학교 지식재산교육센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_10",
+      "source_file": "제주대학교 인권센터 규정(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 50,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 제주대학교 구성원의 인권을 보호하고 권익을 향상시키기 위하여 「고등교육법 」제19조의3 및 「제주대학교 조직 및 위원회 등의 설치 규정」 제2조에 따라 설치된 제주대학교 인권센터(이하 “센터”라 한다)의 조직과 운영 등에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_11",
+      "source_file": "제주산학융합지구사업단 규정 (2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 1,
+      "purpose_summary": "이 규정의 목적은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조에 따라 제주산학융합지구를 기반으로 전문인력 공급, 기업성장 및 고용창출이 선순환되는 제주형 산업생태계 구축에 기여하고자 설립된 제주대학교 제주산학융합지구사업단의 조직과 운영에 필요한 사항을 정하는 데 있다."
+    },
+    {
+      "rule_id": "193703_12",
+      "source_file": "교육대사범대 포인트(PoINT)사업단 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 51. 교육대사범대 포인트(PoINT) 사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_13",
+      "source_file": "제2052호 현장실습지원센터 규정(251112).hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제2항에 따라 제주대학교 현장실습지원센터의 조직 및 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_14",
+      "source_file": "여대생커리어개발센터.hwp",
+      "status": "chunked",
+      "articles": 7,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치 규정」제2조제2항에 따라 여대생커리어개발센터의 조직 및 운영 등에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_15",
+      "source_file": "제1981호 교육성과관리센터 규정(2024.7.1.).hwp",
+      "status": "chunked",
+      "articles": 6,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제9조제5항 및 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 교육성과관리센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_16",
+      "source_file": "청소년 꿈 센터 규정 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 55. 청소년꿈센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_17",
+      "source_file": "교원양성대학 소프트웨어교육 강화지원사업단 규정 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 56. 교원양성대학 소프트웨어교육 강화지원사업단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_18",
+      "source_file": "제2012호 제주대학교 마이크로데이터 이용센터 규정 폐지 규정(2025.2.27.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 57. 마이크로데이터 이용센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193703_19",
+      "source_file": "글로벌리더십역량 개발센터.hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 『제주대학교 조직 및 위원회 등의 설치규정』 제2조 제2항에 따른 제주대학교 글로벌리더십역량 개발 센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193703_20",
+      "source_file": "신문방송출판부(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 28,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」제2조제2항에 따라 신문방송출판부의 조직과 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193704_1",
+      "source_file": "수목진단센터 규정.hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치 규정」 제2조제3항에 따라 제주대학교 수목진단센터 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193704_2",
+      "source_file": "비교과교육센터(제정).hwp",
+      "status": "chunked",
+      "articles": 6,
+      "addenda": 1,
+      "purpose_summary": "이 지침은 「제주대학교 학칙」제9조제5항 및「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따라 제주대학교 비교과교육센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193704_3",
+      "source_file": "교수학습지원센터(제정).hwp",
+      "status": "chunked",
+      "articles": 6,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」제9조제5항 및「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따라 제주대학교 교수학습지원센터의 조직 및 운영에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193704_4",
+      "source_file": "제2005호 IR센터 규정(2024.12.26.).hwp",
+      "status": "chunked",
+      "articles": 6,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」 제2조제3항에 따라 제주대학교 IR센터(Institutional Research Center)의 직무, 조직 및 운영에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193704_5",
+      "source_file": "벤처스타트업아카데미사업단 규정(2023.04.25.제정).hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제2조제3항에 따른 지원시설로서 제주대학교 벤처스타트업아카데미사업단 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193704_6",
+      "source_file": "제2043호 제주대학교 제주지역혁신플랫폼 그린에너지미래모빌리티사업단 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 65. 그린에너지미래모빌리티사업단에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193704_7",
+      "source_file": "제2041호 제주대학교 제주지역혁신플랫폼 대학교육혁신본부 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 66. 대학교육혁신본부에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193704_8",
+      "source_file": "제2044호 제주대학교 제주지역혁신플랫폼 지능형서비스사업단 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 67. 지능형서비스사업단에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193704_9",
+      "source_file": "제2042호 제주대학교 제주지역혁신플랫폼 청정바이오사업단 규정 폐지규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설(본부) 분야의 68. 청정바이오사업단에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193704_10",
+      "source_file": "제2009호 김창인 실천철학교육원 규정(2024.12.26.).hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조 제2항에 규정된 제주대학교 김창인 실천철학교육원의 조직과 운영에 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193704_11",
+      "source_file": "제2029호 제주대학교 약초원 규정(2025. 6. 19.).hwp",
+      "status": "chunked",
+      "articles": 8,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 약초원」(이하 “약초원”이라 한다)의 조직과 운영 등에 관한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_1",
+      "source_file": "사범대학 부설 교육연수원.hwp",
+      "status": "chunked",
+      "articles": 30,
+      "addenda": 3,
+      "purpose_summary": "이 규정은「교원 등의 연수에 관한 규정」 제2조제2항과 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제2항에 따른 제주대학교 사범대학 부설 교육연수원의 설치와 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_2",
+      "source_file": "생명자원과학대학 부설 연구실습센터.hwp",
+      "status": "chunked",
+      "articles": 24,
+      "addenda": 3,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조 제2항에 따른 제주대학교 생명자원과학대학 부설 연구실습센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_3",
+      "source_file": "해양과학대학 부설 실습선.hwp",
+      "status": "chunked",
+      "articles": 42,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조제2항에 따른 제주대학교 해양과학대학 부설 실습선의 효율적인 관리‧운영과 승무원이 준수하여야 할 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_4",
+      "source_file": "제2027호 제주대학교 해양과학대학 부설 선박운항관리센터 규정(2025.4.29.).hwp",
+      "status": "chunked",
+      "articles": 7,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조 제2항에 따른 제주대학교 해양과학대학 부설 선박운항관리센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_5",
+      "source_file": "자연과학대학 부설 생활체육지도자연수원.hwp",
+      "status": "chunked",
+      "articles": 19,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 ｢국민체육진흥법 시행령｣ 제9조제5항에 따른 제주대학교 자연과학대학 부설 생활스포츠지도사연수원의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_6",
+      "source_file": "자연과학대학 지역과학기술진흥센터 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설 (대학(원)부설) 분야의 6. 자연과학대학 지역과학기술진흥센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193705_7",
+      "source_file": "공과대학 부설 공장.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조제2항에 따른 제주대학교 공과대학 부설공장의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_8",
+      "source_file": "교육대학 부설 교육연수원.hwp",
+      "status": "chunked",
+      "articles": 33,
+      "addenda": 2,
+      "purpose_summary": "「제주대학교 조직 및 위원회 등의 설치규정」 제2조 제2항에 따른 연수원은「교원 등의 연수에 관한 규정」에 의하여 교원으로서의 기본 자질과 직책 수행에 필요한 새로운 전문지식 및 교육기술을 연마하고 교직의 전문성을 높이도록 함으로써 우리나라 교육발전에 이바지하게 함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_9",
+      "source_file": "제1968호 수의과대학 부설동물병원 규정(2024.2.28.).hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치 규정」제2조제3항에 따른 제주대학교 수의과대학 부설 동물병원의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_10",
+      "source_file": "통역번역대학원 부설 통역번역센터.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 제주대학교 통역번역대학원 부설통역번역센터(이하“센터”라 한다)의 조직과 운영에 관하여 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_11",
+      "source_file": "제1965호 제주대학교 법학전문대학원 역량강화센터 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 지원시설 (대학(원)부설) 분야의 11. 법학전문대학원 역량강화센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193705_12",
+      "source_file": "수의과대학 부설 말(馬) 전문 동물병원 규정.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치 규정」제2조제2항에 따른 제주대학교 수의과대학 부설 말(馬) 전문 동물병원의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193705_13",
+      "source_file": "제1991호 글로벌교원교육센터 규정(2024.7.31.).hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 글로벌 교원 교육을 위한 제주대학교 글로벌교원교육센터(이하 “센터”라 한다)의 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_1",
+      "source_file": "탐라문화연구원.hwp",
+      "status": "chunked",
+      "articles": 12,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 규정된 제주대학교 탐라문화연구원의 조직과 운영에 관한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_2",
+      "source_file": "법과정책연구원.hwp",
+      "status": "chunked",
+      "articles": 16,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 법과정책연구원의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_3",
+      "source_file": "관광과경영경제연구소.hwp",
+      "status": "chunked",
+      "articles": 19,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 관광과경영경제연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_4",
+      "source_file": "평화연구소 규정.hwp",
+      "status": "chunked",
+      "articles": 20,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제4항에 따른 제주대학교 평화연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_5",
+      "source_file": "교육과학연구소.hwp",
+      "status": "chunked",
+      "articles": 19,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 교육과학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_6",
+      "source_file": "제2016호 초등교육연구소(2025.2.27.).hwp",
+      "status": "chunked",
+      "articles": 16,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 초등교육연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_7",
+      "source_file": "인문과학연구소.hwp",
+      "status": "chunked",
+      "articles": 19,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 인문과학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_8",
+      "source_file": "사회과학연구소.hwp",
+      "status": "chunked",
+      "articles": 12,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교사회과학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193706_9",
+      "source_file": "세계환경과섬연구소 규정 폐지 규정(2023.04.10.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구소 (인문사회) 분야의 9. 세계환경과섬연구소에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193706_10",
+      "source_file": "평생교육연구소 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구소 (인문사회) 분야의 10. 평생교육연구소 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193706_11",
+      "source_file": "한컴글로컬연구소 규정(2023.06.07.).hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치 규정」제2조 제4항에 의한 연구시설로서 제주대학교 한컴글로컬연구소의 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193707_1",
+      "source_file": "아열대농업생명과학연구소.hwp",
+      "status": "chunked",
+      "articles": 25,
+      "addenda": 5,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 아열대농업생명과학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193707_2",
+      "source_file": "기당해양과학원 규정(2024.1.24.전부개정).hwp",
+      "status": "chunked",
+      "articles": 22,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제2조제4항에 따른 제주대학교 기당해양과학원의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193707_3",
+      "source_file": "기초과학연구소.hwp",
+      "status": "chunked",
+      "articles": 22,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 기초과학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193707_4",
+      "source_file": "아열대원예산업연구소.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 아열대원예산업연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193707_5",
+      "source_file": "친환경농업연구소.hwp",
+      "status": "chunked",
+      "articles": 16,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 친환경농업연구소(영문 Sustainable Agriculture Research Institute(약자 SARI))의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193708_1",
+      "source_file": "원자력과학기술연구소.hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」에 따른 제주대학교 원자력과학기술연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193708_2",
+      "source_file": "제주약학연구소 규정(2023.04.10.).hwp",
+      "status": "chunked",
+      "articles": 8,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 제주 지역 약학 분야 연구역량 강화 및 학문 후속세대 발굴을 위하여 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제2조제4항에 따라 설치된 제주약학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193708_3",
+      "source_file": "공과대학첨단기술연구소.hwp",
+      "status": "chunked",
+      "articles": 23,
+      "addenda": 4,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 공과대학첨단기술연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193708_4",
+      "source_file": "제1984호 의과학연구소 규정(2024.7.1.).hwp",
+      "status": "chunked",
+      "articles": 16,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제2조제3항에 따른 제주대학교 의과학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193708_5",
+      "source_file": "수의과학연구소(2023.06.07.).hwp",
+      "status": "chunked",
+      "articles": 13,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제4항에 따른 제주대학교 수의과학연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193708_6",
+      "source_file": "건강과간호연구소 규정.hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 건강과간호연구소의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_1",
+      "source_file": "생명자원과학대학 감귤.화훼과학기술센터.hwp",
+      "status": "chunked",
+      "articles": 20,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 농림축산식품부의 농업계 특성화 대학 지원계획에 따라 제주대학교 생명자원과학대학 감귤․화훼과학기술센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_2",
+      "source_file": "통일한반도연구센터 규정 폐지 규정(2023.04.25.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 2. 제주대학교 통일한반도연구센터 규정에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193709_3",
+      "source_file": "생명과학기술혁신센터 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 3. 생명과학기술혁신센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193709_4",
+      "source_file": "조형연구센터 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 4. 조형연구센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193709_5",
+      "source_file": "의료융합기술센터.hwp",
+      "status": "chunked",
+      "articles": 18,
+      "addenda": 4,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 의료융합기술센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_6",
+      "source_file": "아열대.열대생물유전자은행센터.hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 3,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 아열대․열대생물유전자은행센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_7",
+      "source_file": "공과대학 청정에너지실증연구센터.hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제2항에 따른 제주대학교 공과대학 청정에너지실증연구센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_8",
+      "source_file": "줄기세포연구센터.hwp",
+      "status": "chunked",
+      "articles": 17,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 줄기세포연구센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_9",
+      "source_file": "국제금융연구센터 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 9. 국제금융연구센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193709_10",
+      "source_file": "이어도연구센터.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 10. 이어도연구센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193709_11",
+      "source_file": "전기에너지연구센터.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 전기에너지연구센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_12",
+      "source_file": "화장품과학연구센터.hwp",
+      "status": "chunked",
+      "articles": 15,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 화장품과학연구센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_13",
+      "source_file": "말산업전문인력양성센터.hwp",
+      "status": "chunked",
+      "articles": 13,
+      "addenda": 2,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주대학교 말산업 전문인력양성센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193709_14",
+      "source_file": "환경보건센터.hwp",
+      "status": "chunked",
+      "articles": 11,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주특별자치도 환경보건센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_1",
+      "source_file": "제2030호 제주대학교 스마트그리드 연구센터 규정 폐지 규정.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 15. 스마트그리드 연구센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193710_2",
+      "source_file": "스토리텔링연구개발센터 규정 폐지 규정(2023.04.10.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 16. 스토리텔링 연구개발센터에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193710_3",
+      "source_file": "휴먼인터페이스 미디어센터.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제3항에 따른 제주대학교 휴먼인터페이스 미디어센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_4",
+      "source_file": "인쇄전자기술 연구센터 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 18. 인쇄전자기술 연구센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193710_5",
+      "source_file": "제주수자원방재연구단 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 19. 제주수자원방재연구단 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193710_6",
+      "source_file": "앱센터 폐지.hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 20. 앱센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193710_7",
+      "source_file": "아시아공동체 연구센터.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 2,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제4항에 따른 제주대학교 아시아공동체 연구센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_8",
+      "source_file": "제2013호 제주대학교 도박중독연구센터 규정 폐지 규정(2025.2.27.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 22. 도박중독연구센터 폐지에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193710_9",
+      "source_file": "전기차사업단 규정 폐지 규정(2023.04.10.).hwp",
+      "status": "no_articles",
+      "articles": 0,
+      "addenda": 0,
+      "purpose_summary": "이 규정은 제주대학교 연구센터 분야의 23. 전기차사업단에 관한 사항을 다룬다."
+    },
+    {
+      "rule_id": "193710_10",
+      "source_file": "태풍연구센터.hwp",
+      "status": "chunked",
+      "articles": 7,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제3항에 따른 제주 대학교 태풍연구센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_11",
+      "source_file": "창의교육거점센터 규정.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제4조 및 「제주대학교 조직 및 위원회 등의 설치규정」제2조에 의한 연구시설로서 제주대학교 창의교육거점센터의 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_12",
+      "source_file": "바이오헬스소재개발연구지원센터.hwp",
+      "status": "chunked",
+      "articles": 14,
+      "addenda": 1,
+      "purpose_summary": "이 규정은「제주대학교 조직 및 위원회 등의 설치규정」제2조에 따른 연구시설로서 제주대학교 바이오헬스소재개발연구지원센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_13",
+      "source_file": "의과대학 환경성질환 예방관리센터(제정).hwp",
+      "status": "chunked",
+      "articles": 8,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 조직 및 위원회 등의 설치규정」제2조제4항에 따라 제주특별자치도 환경성질환 예방관리센터 사업의 효과적인 수행을 위한 제주대학교 의과대학 환경성질환 예방관리센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_14",
+      "source_file": "제주통일교육센터(제정).hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제4조 및 「제주대학교 조직 및 위원회 등의 설치 규정」제2조 제4항에 의한 연구시설로서 제주대학교 제주통일교육센터의 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_15",
+      "source_file": "어촌·수산경영연구센터 규정(2023.04.25.제정).hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치 규정｣ 제2조제4항에 따른 제주대학교 어촌·수산 경영연구센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_16",
+      "source_file": "글로벌롱제비티연구센터 규정(2024.1.24.제정).hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 「제주대학교 학칙」 제4조 및 「제주대학교 조직 및 위원회 등의 설치규정」 제2조제4항에 따른 연구시설로서 제주대학교 글로벌롱제비티연구센터(이하 “센터”라 한다)의 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_17",
+      "source_file": "제1976호 푸드테크센터 규정(2024.7.1.)_수정.hwp",
+      "status": "chunked",
+      "articles": 10,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제2조제4항에 따른 제주대학교 푸드테크센터의 조직과 운영에 필요한 사항을 정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193710_18",
+      "source_file": "제1992호 지방시대 법.정책연구센터 규정(2024.7.31.).hwp",
+      "status": "chunked",
+      "articles": 9,
+      "addenda": 1,
+      "purpose_summary": "이 규정은 ｢제주대학교 조직 및 위원회 등의 설치규정｣ 제2조제4항에 따른 제주대학교 지방시대 법·정책연구센터 조직과 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193711_1",
+      "source_file": "교대부설초_학교규칙2021년_7월26일개정.hwp",
+      "status": "chunked",
+      "articles": 41,
+      "addenda": 2,
+      "purpose_summary": "이 학교규칙은 「초·중등교육법」 제8조 및 같은 법 시행령 제9조에 따라 학교운영·학생생활 등에 관한 사항을 규정하며 제주대학교 교육대학 학생들의 교육 실습·초등교육에 관한 상설연구학교 운영 등에 필요한 사항을 규정하는 것을 목적으로 한다."
+    },
+    {
+      "rule_id": "193711_2",
+      "source_file": "사범대학부설중학교 학칙.hwp",
+      "status": "chunked",
+      "articles": 32,
+      "addenda": 1,
+      "purpose_summary": "제주대학교사범대학부설중학교(이하 “본교”라 한다)는 교육기본법과 초․중등교육법에 의하여 중등교육을 실시함을 목적으로 한다."
+    },
+    {
+      "rule_id": "193711_3",
+      "source_file": "사범대학부설고등학교 학칙.hwp",
+      "status": "chunked",
+      "articles": 51,
+      "addenda": 3,
+      "purpose_summary": "본교는 초․중등교육법 및 동법시행령에 의하여 중학교에서 받은 교육의 기초위에 중등교육을 실시하고 교육실습생을 지도하며 중등교육에 관하여 연구함을 목적으로 한다."
+    }
+  ]
+}
