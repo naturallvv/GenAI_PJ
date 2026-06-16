@@ -1,0 +1,25 @@
+{
+  "qa_count": 500,
+  "top_k": 5,
+  "retrieval_mode": "hybrid",
+  "retrieval": {
+    "hit_at_1": 0.906,
+    "hit_at_3": 0.992,
+    "hit_at_5": 0.998,
+    "mrr": 0.9478333333333332
+  },
+  "llm_model": null,
+  "quantization": null,
+  "index": "data/index_contextual/faiss.index",
+  "metadata": "data/index_contextual/faiss_metadata.jsonl",
+  "bm25_index": "data/index_contextual/bm25.json",
+  "dense_weight": 0.9,
+  "candidate_k": 50,
+  "reranker_model": null,
+  "elapsed_seconds": 18.522,
+  "cuda": {
+    "device": "NVIDIA RTX A6000",
+    "max_memory_allocated_gb": 2.125,
+    "max_memory_reserved_gb": 2.139
+  }
+}

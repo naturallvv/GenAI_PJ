@@ -1,0 +1,34 @@
+{
+  "qa_count": 100,
+  "top_k": 5,
+  "retrieval_mode": "hybrid",
+  "retrieval": {
+    "hit_at_1": 0.94,
+    "hit_at_3": 1.0,
+    "hit_at_5": 1.0,
+    "mrr": 0.9666666666666666
+  },
+  "llm_model": "LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct",
+  "quantization": "fp16",
+  "generation": {
+    "evaluated_count": 100,
+    "citation_accuracy": 0.95,
+    "keyword_recall": 0.65,
+    "answer_pass_rate": 0.81,
+    "generation_elapsed_seconds_avg": 3.37122,
+    "generated_tokens_avg": 87.86,
+    "tokens_per_second_avg": 25.40612999999999
+  },
+  "index": "data/index_contextual/faiss.index",
+  "metadata": "data/index_contextual/faiss_metadata.jsonl",
+  "bm25_index": "data/index_contextual/bm25.json",
+  "dense_weight": 0.9,
+  "candidate_k": 50,
+  "reranker_model": null,
+  "elapsed_seconds": 343.238,
+  "cuda": {
+    "device": "NVIDIA RTX A6000",
+    "max_memory_allocated_gb": 17.123,
+    "max_memory_reserved_gb": 17.738
+  }
+}

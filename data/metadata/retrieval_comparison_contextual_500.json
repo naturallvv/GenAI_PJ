@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Baseline Dense",
+    "status": "ok",
+    "qa_count": 500,
+    "top_k": 5,
+    "retrieval_mode": "dense",
+    "hit_at_1": 0.9,
+    "hit_at_3": 0.988,
+    "hit_at_5": 0.998,
+    "mrr": 0.9443999999999999,
+    "dense_weight": null,
+    "candidate_k": 50,
+    "reranker_model": null,
+    "elapsed_seconds": 10.858,
+    "report_path": "data/metadata/eval_report_baseline_dense_500.json"
+  },
+  {
+    "name": "Contextual Dense",
+    "status": "ok",
+    "qa_count": 500,
+    "top_k": 5,
+    "retrieval_mode": "dense",
+    "hit_at_1": 0.902,
+    "hit_at_3": 0.986,
+    "hit_at_5": 0.998,
+    "mrr": 0.9434666666666665,
+    "dense_weight": null,
+    "candidate_k": 50,
+    "reranker_model": null,
+    "elapsed_seconds": 10.044,
+    "report_path": "data/metadata/eval_report_contextual_dense_500.json"
+  },
+  {
+    "name": "Contextual Hybrid",
+    "status": "ok",
+    "qa_count": 500,
+    "top_k": 5,
+    "retrieval_mode": "hybrid",
+    "hit_at_1": 0.906,
+    "hit_at_3": 0.992,
+    "hit_at_5": 0.998,
+    "mrr": 0.9478333333333332,
+    "dense_weight": 0.9,
+    "candidate_k": 50,
+    "reranker_model": null,
+    "elapsed_seconds": 18.522,
+    "report_path": "data/metadata/eval_report_contextual_hybrid_w09_500.json"
+  },
+  {
+    "name": "Contextual Hybrid + Reranker",
+    "status": "missing",
+    "report_path": "data/metadata/eval_report_contextual_hybrid_reranker_500.json"
+  }
+]
