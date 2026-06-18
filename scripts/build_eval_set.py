@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""평가셋 확장용 결정론적 샘플러 + 라벨 추출기.
-
-질문 문장은 사람이(혹은 강한 LLM이) 작성하고, 채점에 쓰이는 라벨은 이 스크립트가
-원문 조항에서 결정론적으로 추출한다. 따라서 질문 생성 모델의 품질이 정답 라벨을
-오염시키지 않는다.
-
-동작:
-  1) data/processed/articles_contextual.jsonl 에서 실질 조항만 필터링
-  2) 기존 qa_seed.jsonl 이 다루는 조항은 제외(중복 방지)
-  3) 카테고리 균형 + 규정당 상한을 적용해 신규 후보를 라운드로빈 샘플링
-  4) 각 후보에 expected_citations / expected_keywords / reference_answer 자동 부착
-  5) 작성 워크시트(md)와 머신용 후보(jsonl) 출력
-
-사용법:
-  python scripts/build_eval_set.py --new 400 --seed 42
-"""
 import argparse
 import json
 import math
